@@ -20,21 +20,20 @@ A modern, responsive barbershop and salon website showcasing professional haircu
 - **About Section:** Introduction to Charlie "The Barberian" Domingo
 - **Our Story Section:** Detailed history and mission of the barbershop
 - **Contact & Location:** Complete contact information with embedded Google Maps
-- **Social Media Integration:** Links to Facebook and TikTok profiles
 - **SEO Optimized:** Includes meta descriptions, alt attributes, and semantic HTML5 structure
 
 ## Technologies Used
 
 - **HTML5:** Semantic markup with proper structure
 - **Tailwind CSS:** Utility-first CSS framework for styling
-- **AOS (Animate On Scroll):** Scroll animations library
+- **AOS (An Animation Library):** Scroll animations library
 - **RemixIcon:** Icon library for visual elements
 - **Google Fonts:** Poppins font family
 - **Google Maps:** Embedded map for location
 
-## SEO Features
+## SEO Optimizations
 
-- Meta description with long-tail keywords
+- Meta description with long-tail keywords (Comment Only)
 - Alt attributes on all images
 - Title attributes on all anchor tags
 - HTML5 semantic elements (main, article, figure, section, header, footer, nav)
@@ -50,6 +49,3 @@ A modern, responsive barbershop and salon website showcasing professional haircu
 5. **About:** Introduction to Charlie the Barberian
 6. **Our Story:** History and mission of the barbershop
 7. **Contact:** Location, hours, and booking information
-
-**Website:** Charlie's Barber & Salon  
-**Type:** Barbershop & Salon Business Website

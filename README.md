@@ -1,5 +1,7 @@
 # Charlie's Barber & Salon
 
+<img width="1898" height="800" alt="image" src="https://github.com/user-attachments/assets/377f6c25-6236-4c10-9450-b09c5f9ad758" />
+
 A modern, responsive barbershop and salon website showcasing professional haircut services, hair coloring, and styling services in Angeles City, Pampanga.
 
 ## Duque, James Michael L.

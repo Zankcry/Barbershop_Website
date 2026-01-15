@@ -15,7 +15,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -27,92 +27,211 @@
     
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Outfit', sans-serif;
         }
 
         html {
             scroll-behavior: smooth;
         }
-    </style>
 
-    
+        /* Gradient Text Animation */
+        .animate-gradient {
+            background-size: 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-move 3s ease infinite;
+        }
+
+        @keyframes gradient-move {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating Animation */
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Glass Card Effect */
+        .glass-card {
+            background: rgba(31, 41, 55, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: #db2777;
+        }
+    </style>
 </head>
 <body class="bg-gray-900 text-gray-300">
 
     <!-- Header & Navbar -->
-    <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50" data-aos="fade-down">
-    <nav class="container mx-auto px-6 py-4 flex justify-between items-center relative">
-        <a href="#" class="text-2xl font-bold text-white" title="Charlie's Barber & Salon Home"><span class="text-pink-600">Charlie's</span> Barber</a>
-        <div class="hidden md:flex space-x-8 items-center absolute left-1/2 -translate-x-1/2">
-                <a href="#services" class="hover:text-pink-500 transition-colors" title="View our barber services">Services</a>
-                <a href="#gallery" class="hover:text-pink-500 transition-colors" title="View our work gallery">Gallery</a>
-                <a href="#features" class="hover:text-pink-500 transition-colors" title="See our featured work">Features</a>
-                <a href="#about" class="hover:text-pink-500 transition-colors" title="Learn about Charlie the Barberian">About</a>
-                <a href="#our-story" class="hover:text-pink-500 transition-colors" title="Read our story">Our Story</a>
-                <a href="#contact" class="hover:text-pink-500 transition-colors" title="Contact us or visit our location">Contact</a>
+    <header class="fixed w-full top-0 z-50 transition-all duration-300 bg-transparent py-6" data-aos="fade-down">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center relative transition-all">
+            <a href="#" class="text-2xl font-bold text-white group" title="Charlie's Barber & Salon Home">
+                <span class="text-pink-600 group-hover:text-white transition-colors">Charlie's</span> Barber
+            </a>
+            <div class="hidden md:flex space-x-8 items-center absolute left-1/2 -translate-x-1/2">
+                <a href="#services" class="text-gray-300 hover:text-pink-500 transition-colors uppercase text-sm tracking-wider" title="View our barber services">Services</a>
+                <a href="#gallery" class="text-gray-300 hover:text-pink-500 transition-colors uppercase text-sm tracking-wider" title="View our work gallery">Gallery</a>
+                <a href="#features" class="text-gray-300 hover:text-pink-500 transition-colors uppercase text-sm tracking-wider" title="See our featured work">Features</a>
+                <a href="#about" class="text-gray-300 hover:text-pink-500 transition-colors uppercase text-sm tracking-wider" title="Learn about Charlie the Barberian">About</a>
+                <a href="#our-story" class="text-gray-300 hover:text-pink-500 transition-colors uppercase text-sm tracking-wider" title="Read our story">Our Story</a>
+                <a href="#contact" class="text-gray-300 hover:text-pink-500 transition-colors uppercase text-sm tracking-wider" title="Contact us or visit our location">Contact</a>
             </div>
-            <a href="#contact" class="bg-pink-600 text-white font-semibold px-5 py-2 rounded-full hover:bg-pink-700 transition-colors" title="Book an appointment now">
-                Book Now
+            <a href="#contact" class="bg-pink-600 text-white font-semibold px-6 py-2 rounded-full hover:bg-pink-700 hover:shadow-lg hover:shadow-pink-600/30 transition-all transform hover:-translate-y-0.5" title="Book an appointment now">
             </a>
         </nav>
     </header>
 
     <main>
     <!-- Hero Section -->
-    <section class="relative h-[80vh] min-h-[500px] flex items-center justify-center text-center text-white">
-        <div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('images/store.jfif');" role="img" aria-label="Charlie's Barber & Salon storefront"></div>
-        <div class="absolute inset-0 bg-black/70 z-10"></div>
-        <div class="relative z-20 container mx-auto px-6" data-aos="fade-in" data-aos-duration="1500">
-            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4" data-aos="fade-up" data-aos-delay="500">Crafting <span class="text-pink-600">Confidence</span>, One Cut at a Time.</h1>
-            <p class="text-lg md:text-xl text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="800">Charlie's Barber & Salon | In front of Holy Angel University, Angeles City</p>
-            <a href="#services" class="bg-pink-600 text-white font-semibold px-8 py-3 rounded-full text-lg hover:bg-pink-700 transition-colors" data-aos="fade-up" data-aos-delay="1100" title="Explore our barber and salon services">
-                Explore Our Services
+    <section class="relative h-screen min-h-[600px] flex items-center justify-center text-center text-white overflow-hidden">
+        <div class="absolute inset-0 bg-fixed bg-cover bg-center z-0 transform scale-110 motion-safe:animate-pulse-slow" style="background-image: url('images/store.jfif'); animation-duration: 20s;" role="img" aria-label="Charlie's Barber & Salon storefront"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-gray-900/40 via-gray-900/70 to-gray-900 z-10"></div>
+        
+        <!-- Floating shapes -->
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-pink-600/20 rounded-full blur-3xl animate-float z-10 mix-blend-overlay"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl animate-float z-10 mix-blend-overlay" style="animation-delay: 2s;"></div>
+
+        <div class="relative z-20 container mx-auto px-6 h-full flex flex-col justify-center items-center" data-aos="fade-in" data-aos-duration="1500">
+            <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6 tracking-tight" data-aos="fade-up" data-aos-delay="500">
+                Crafting <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 animate-gradient">Confidence</span>,<br/>One Cut at a Time.
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto font-light" data-aos="fade-up" data-aos-delay="800">
+                Where traditional barbering meets modern style in Angeles City.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="1100">
+                <a href="#services" class="group relative px-8 py-3 rounded-full text-lg overflow-hidden bg-pink-600 text-white shadow-lg transition-all hover:shadow-pink-600/40 hover:-translate-y-1">
+                    <span class="relative z-10 font-semibold">Explore Our Services</span>
+                    <div class="absolute inset-0 bg-gradient-to-r from-pink-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </a>
+                <a href="#contact" class="px-8 py-3 rounded-full text-lg border border-white/30 hover:bg-white/10 backdrop-blur-sm transition-all text-white font-semibold">
+                    Book Appointment
+                </a>
+            </div>
+        </div>
+
+        <!-- Hero Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce">
+            <a href="#services" class="text-white/50 hover:text-white transition-colors">
+                <i class="ri-arrow-down-double-line text-3xl"></i>
             </a>
         </div>
     </section>
 
         <!-- Services Section -->
-        <section id="services" class="py-20 bg-gray-900">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl font-bold text-white mb-2" data-aos="slide-up">Our Services</h2>
-                <p class="text-gray-400 mb-12" data-aos="slide-up" data-aos-delay="100">Expert services for men, women, and children.</p>
+        <section id="services" class="py-24 bg-gray-900 relative">
+             <div class="absolute top-0 right-0 w-1/3 h-1/3 bg-pink-600/5 rounded-full blur-3xl"></div>
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <span class="text-pink-500 font-semibold tracking-wider text-sm uppercase mb-2 block" data-aos="fade-up">What We Do</span>
+                <h2 class="text-4xl font-bold text-white mb-4" data-aos="fade-up" data-aos-delay="100">Premium Services</h2>
+                <p class="text-gray-400 mb-16 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">Experience expert nurturing and styling for men, women, and children in a relaxing environment.</p>
+                
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <article class="bg-gray-800 p-8 rounded-lg border border-gray-700 transform hover:cursor-pointer hover:scale-105 hover:border-pink-500 transition-all duration-300" data-aos="fade-in" data-aos-delay="200">
-                        <h3 class="text-2xl font-bold text-white mb-4">Modern Haircuts</h3>
-                        <p class="text-gray-400">Precision cuts for men, women, and children. We specialize in fades, tapers, and classic styles to match your look.</p>
+                    <!-- Card 1 -->
+                    <article class="glass-card p-8 rounded-2xl text-left group hover-trigger" data-aos="fade-up" data-aos-delay="300">
+                        <div class="bg-gray-800/50 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-pink-600 group-hover:text-white transition-colors duration-300">
+                            <i class="ri-scissors-cut-line text-2xl text-pink-500 group-hover:text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Modern Haircuts</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">Precision cuts designed to suit your face shape and lifestyle. From classic fades to modern texturing.</p>
+                        <a href="#contact" class="inline-flex items-center text-pink-500 hover:text-pink-400 font-semibold transition-colors">
+                            Book This Service <i class="ri-arrow-right-line ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
                     </article>
-                    <article class="bg-gray-800 p-8 rounded-lg border border-gray-700 transform hover:cursor-pointer hover:scale-105 hover:border-pink-500 transition-all duration-300" data-aos="fade-in" data-aos-delay="400">
-                        <h3 class="text-2xl font-bold text-white mb-4">Color & Treatments</h3>
-                        <p class="text-gray-400">Vibrant hair coloring, highlights, and nourishing Keratin treatments to rejuvenate your hair and give it a fresh, healthy glow.</p>
+
+                    <!-- Card 2 -->
+                    <article class="glass-card p-8 rounded-2xl text-left group hover-trigger" data-aos="fade-up" data-aos-delay="400">
+                        <div class="bg-gray-800/50 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-pink-600 group-hover:text-white transition-colors duration-300">
+                            <i class="ri-palette-line text-2xl text-pink-500 group-hover:text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Color & Treatments</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">Transform your look with vibrant colors, subtle highlights, or restorative keratin treatments.</p>
+                        <a href="#contact" class="inline-flex items-center text-pink-500 hover:text-pink-400 font-semibold transition-colors">
+                            Book This Service <i class="ri-arrow-right-line ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
                     </article>
-                    <article class="bg-gray-800 p-8 rounded-lg border border-gray-700 transform hover:cursor-pointer hover:scale-105 hover:border-pink-500 transition-all duration-300" data-aos="fade-in" data-aos-delay="600">
-                        <h3 class="text-2xl font-bold text-white mb-4">Styling & Grooming</h3>
-                        <p class="text-gray-400">Professional styling for any occasion and basic grooming services to ensure you always look your sharpest.</p>
+
+                    <!-- Card 3 -->
+                    <article class="glass-card p-8 rounded-2xl text-left group hover-trigger" data-aos="fade-up" data-aos-delay="500">
+                         <div class="bg-gray-800/50 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-pink-600 group-hover:text-white transition-colors duration-300">
+                            <i class="ri-magic-line text-2xl text-pink-500 group-hover:text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Styling & Grooming</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">Complete your look with professional styling for special occasions or daily confidence.</p>
+                        <a href="#contact" class="inline-flex items-center text-pink-500 hover:text-pink-400 font-semibold transition-colors">
+                            Book This Service <i class="ri-arrow-right-line ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
                     </article>
                 </div>
             </div>
         </section>
 
         <!-- Gallery Section -->
-        <section id="gallery" class="py-20 bg-gray-800">
+        <section id="gallery" class="py-24 bg-gray-900">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-white text-center mb-12" data-aos="fade-up">Our Work</h2>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <figure class="group relative overflow-hidden rounded-lg" data-aos="zoom-in-up">
-                        <img src="images/orange.jpg" alt="Professional men's fade haircut with orange highlights at Charlie's Barber & Salon" class="rounded-lg w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-semibold"></div>
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12" data-aos="fade-up">
+                    <div>
+                         <span class="text-pink-500 font-semibold tracking-wider text-sm uppercase mb-2 block">Portfolio</span>
+                        <h2 class="text-4xl font-bold text-white">Our Masterpieces</h2>
+                    </div>
+                    <a href="https://www.facebook.com/charlie.domingo.391" target="_blank" class="text-gray-400 hover:text-white transition-colors mt-4 md:mt-0 flex items-center gap-2 group">
+                        View more on Facebook <i class="ri-arrow-right-line group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                    <!-- Gallery Item 1 -->
+                    <figure class="group relative overflow-hidden rounded-2xl aspect-[3/4] cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+                        <img src="images/orange.jpg" alt="Orange Highlights Fade" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-0 left-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            <span class="text-pink-500 text-xs font-bold uppercase tracking-wider mb-1 block opacity-0 group-hover:opacity-100 transition-opacity delay-100">Color & Cut</span>
+                            <h3 class="text-white font-bold text-lg">Orange Burst Fade</h3>
+                        </div>
                     </figure>
-                     <figure class="group relative overflow-hidden rounded-lg" data-aos="zoom-in-up" data-aos-delay="100">
-                        <img src="images/red.jpg" alt="Vibrant red hair coloring service at Charlie's Barber & Salon in Angeles City" class="rounded-lg w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
-                         <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-semibold"></div>
+
+                     <!-- Gallery Item 2 -->
+                    <figure class="group relative overflow-hidden rounded-2xl aspect-[3/4] cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+                        <img src="images/red.jpg" alt="Vibrant Red Hair Color" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                         <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+                         <div class="absolute bottom-0 left-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            <span class="text-pink-500 text-xs font-bold uppercase tracking-wider mb-1 block opacity-0 group-hover:opacity-100 transition-opacity delay-100">Coloring</span>
+                            <h3 class="text-white font-bold text-lg">Vibrant Red</h3>
+                        </div>
                     </figure>
-                    <figure class="group relative overflow-hidden rounded-lg" data-aos="zoom-in-up" data-aos-delay="200">
-                        <img src="images/blonde.jpg" alt="Blonde hair highlights and coloring service at Charlie's Barber & Salon" class="rounded-lg w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-semibold"></div>
+
+                    <!-- Gallery Item 3 -->
+                    <figure class="group relative overflow-hidden rounded-2xl aspect-[3/4] cursor-pointer" data-aos="fade-up" data-aos-delay="300">
+                        <img src="images/blonde.jpg" alt="Blonde Highlights" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+                         <div class="absolute bottom-0 left-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            <span class="text-pink-500 text-xs font-bold uppercase tracking-wider mb-1 block opacity-0 group-hover:opacity-100 transition-opacity delay-100">Highlights</span>
+                            <h3 class="text-white font-bold text-lg">Platinum Blonde</h3>
+                        </div>
                     </figure>
-                     <figure class="group relative overflow-hidden rounded-lg" data-aos="zoom-in-up" data-aos-delay="300">
-                        <img src="images/cut.jpg" alt="Expertly styled men's haircut by Charlie the Barberian in Pampanga" class="rounded-lg w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-semibold"></div>
+
+                     <!-- Gallery Item 4 -->
+                    <figure class="group relative overflow-hidden rounded-2xl aspect-[3/4] cursor-pointer" data-aos="fade-up" data-aos-delay="400">
+                        <img src="images/cut.jpg" alt="Classic Men's Haircut" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+                         <div class="absolute bottom-0 left-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            <span class="text-pink-500 text-xs font-bold uppercase tracking-wider mb-1 block opacity-0 group-hover:opacity-100 transition-opacity delay-100">Grooming</span>
+                            <h3 class="text-white font-bold text-lg">Classic Gentleman</h3>
+                        </div>
                     </figure>
                 </div>
             </div>
@@ -180,158 +299,163 @@
         </section>
 
         <!-- Our Story Section -->
-        <section id="our-story" class="py-20 bg-gray-800 relative overflow-hidden">
+        <section id="our-story" class="py-24 bg-gray-800 relative overflow-hidden">
             <!-- Decorative Background Elements -->
-            <div class="absolute top-0 right-0 w-64 h-64 bg-pink-600/10 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-0 left-0 w-64 h-64 bg-pink-600/10 rounded-full blur-3xl"></div>
+            <div class="absolute top-0 right-0 w-96 h-96 bg-pink-600/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl"></div>
             
             <div class="container mx-auto px-6 relative z-10">
-                <!-- Header -->
-                <div class="text-center mb-16" data-aos="fade-up">
-                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-                        Our <span class="text-pink-600">Story</span>
-                    </h2>
-                    <div class="w-24 h-1 bg-pink-600 mx-auto mb-6"></div>
+                <div class="text-center mb-20" data-aos="fade-up">
+                    <span class="text-pink-500 font-semibold tracking-wider text-sm uppercase mb-2 block">Our Journey</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">From Passion to Profession</h2>
                     <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-                        From a simple vision to becoming Angeles City's trusted barbershop
+                        A barber shop built on the belief that a great haircut is the foundation of confidence.
                     </p>
                 </div>
 
-                <!-- Main Story Content -->
-                <article class="max-w-5xl mx-auto">
-                    <!-- Opening Story Card -->
-                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-xl p-8 md:p-10 mb-8 border border-gray-700 shadow-2xl" data-aos="fade-up" data-aos-delay="100">
-                        <div class="flex items-start gap-4">
-                            <div class="bg-pink-600/20 p-3 rounded-lg">
-                                <i class="ri-scissors-line text-3xl text-pink-600"></i>
-                            </div>
-                            <div class="flex-1">
-                                <h3 class="text-2xl font-bold text-white mb-3">The Beginning</h3>
-                                <p class="text-gray-300 leading-relaxed">
-                                    Charlie's Barber & Salon began with a vision to create a space where artistry meets precision. What started as a passion project has grown into one of Angeles City's most trusted barbershops, serving the community near Holy Angel University.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Timeline/Milestones Grid -->
-                    <div class="grid md:grid-cols-2 gap-6 mb-8">
-                        <!-- Milestone 1 -->
-                        <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-gray-700 hover:border-pink-500 transition-all duration-300 transform hover:scale-105" data-aos="fade-right" data-aos-delay="200">
-                            <div class="flex items-center gap-3 mb-3">
-                                <div class="bg-pink-600 p-2 rounded-full">
-                                    <i class="ri-lightbulb-line text-xl text-white"></i>
-                                </div>
-                                <h3 class="text-xl font-bold text-white">The Vision</h3>
-                            </div>
-                            <p class="text-gray-300 leading-relaxed text-sm">
-                                Charlie Domingo, "The Barberian," combined traditional barbering skills with modern styling techniques. With years of experience and commitment to excellence, he built a reputation for delivering cuts that make a statement.
-                            </p>
-                        </div>
-
-                        <!-- Milestone 2 -->
-                        <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-gray-700 hover:border-pink-500 transition-all duration-300 transform hover:scale-105" data-aos="fade-left" data-aos-delay="300">
-                            <div class="flex items-center gap-3 mb-3">
-                                <div class="bg-pink-600 p-2 rounded-full">
-                                    <i class="ri-map-pin-line text-xl text-white"></i>
-                                </div>
-                                <h3 class="text-xl font-bold text-white">Our Community</h3>
-                            </div>
-                            <p class="text-gray-300 leading-relaxed text-sm">
-                                Located in front of Holy Angel University, we've become a favorite destination for students, professionals, and families throughout Pampanga. Our vibrant atmosphere reflects our dedication to staying current while maintaining timeless quality.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Values Section -->
-                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700 mb-8" data-aos="fade-up" data-aos-delay="400">
-                        <div class="text-center mb-6">
-                            <div class="bg-pink-600/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i class="ri-heart-line text-3xl text-pink-600"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-white mb-4">What Sets Us Apart</h3>
-                            <p class="text-gray-300 mb-6 max-w-2xl mx-auto">
-                                Our commitment to continuous improvement and genuine passion for the craft. Every service is crafted with attention to detail and a focus on building confidence.
+                <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center mb-20">
+                    <!-- Text Content -->
+                    <div class="space-y-8" data-aos="fade-right">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-3 flex items-center gap-3">
+                                <span class="bg-pink-600/20 text-pink-500 p-2 rounded-lg"><i class="ri-history-line"></i></span>
+                                The Beginning
+                            </h3>
+                            <p class="text-gray-400 leading-relaxed">
+                                Charlie's Barber & Salon started with a simple yet powerful vision: to create a space where artistry meets precision. Located near Holy Angel University, what began as a passion project has grown into Angeles City's trusted spot for style and grooming.
                             </p>
                         </div>
                         
-                        <!-- Value Points -->
-                        <div class="grid md:grid-cols-3 gap-6">
-                            <div class="text-center">
-                                <div class="bg-pink-600/20 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-                                    <i class="ri-star-line text-xl text-pink-600"></i>
-                                </div>
-                                <h4 class="text-white font-semibold mb-1">Excellence</h4>
-                                <p class="text-gray-400 text-sm">Uncompromising quality</p>
-                            </div>
-                            <div class="text-center">
-                                <div class="bg-pink-600/20 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-                                    <i class="ri-team-line text-xl text-pink-600"></i>
-                                </div>
-                                <h4 class="text-white font-semibold mb-1">Community</h4>
-                                <p class="text-gray-400 text-sm">Building connections</p>
-                            </div>
-                            <div class="text-center">
-                                <div class="bg-pink-600/20 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-                                    <i class="ri-artboard-line text-xl text-pink-600"></i>
-                                </div>
-                                <h4 class="text-white font-semibold mb-1">Creativity</h4>
-                                <p class="text-gray-400 text-sm">Innovative styles</p>
-                            </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-3 flex items-center gap-3">
+                                <span class="bg-purple-600/20 text-purple-500 p-2 rounded-lg"><i class="ri-user-star-line"></i></span>
+                                The "Barberian"
+                            </h3>
+                            <p class="text-gray-400 leading-relaxed">
+                                Led by Charlie Domingo, known as "The Barberian", we blend traditional barbering techniques with modern trends. We aren't just cutting hair; we are crafting identities, ensuring every client leaves looking sharp and feeling unstoppable.
+                            </p>
                         </div>
                     </div>
 
-                    <!-- Closing Statement -->
-                    <div class="bg-gradient-to-r from-pink-600/20 to-pink-600/10 rounded-xl p-8 border border-pink-600/30 text-center" data-aos="fade-up" data-aos-delay="500">
-                        <i class="ri-quill-pen-line text-4xl text-pink-600 mb-4"></i>
-                        <h3 class="text-2xl font-bold text-white mb-4">
-                            Crafting Confidence, One Cut at a Time
-                        </h3>
-                        <p class="text-gray-300 mb-6 max-w-2xl mx-auto">
-                            We're not just cutting hair—we're building confidence. Whether you're looking for a classic cut, bold color, or complete transformation, we're here to bring your vision to life.
-                        </p>
-                        <a href="#contact" class="inline-block bg-pink-600 text-white font-semibold px-8 py-3 rounded-full hover:bg-pink-700 transition-colors" title="Book your appointment today">
-                            Join Our Story
-                        </a>
+                    <!-- Visual/Stats -->
+                    <div class="relative" data-aos="fade-left">
+                         <div class="glass-card p-8 rounded-3xl border-l-4 border-pink-600">
+                            <i class="ri-double-quotes-l text-4xl text-pink-600 mb-4 blocking"></i>
+                            <h4 class="text-xl font-bold text-white mb-4">Crafting Confidence, One Cut at a Time.</h4>
+                            <p class="text-gray-400 mb-6 italic">
+                                "Located in front of Holy Angel University, we've become a second home for students and locals who value quality, energy, and style."
+                            </p>
+                            
+                            <!-- Simple Values Grid -->
+                            <div class="grid grid-cols-3 gap-4 pt-6 border-t border-gray-700">
+                                <div class="text-center">
+                                    <div class="text-pink-500 font-bold text-xl mb-1">100%</div>
+                                    <div class="text-xs text-gray-500 uppercase tracking-wider">Passion</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-pink-500 font-bold text-xl mb-1">Top</div>
+                                    <div class="text-xs text-gray-500 uppercase tracking-wider">Quality</div>
+                                </div>
+                                 <div class="text-center">
+                                    <div class="text-pink-500 font-bold text-xl mb-1">Local</div>
+                                    <div class="text-xs text-gray-500 uppercase tracking-wider">Favorite</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Decorative shapes -->
+                        <div class="absolute -z-10 -top-4 -right-4 w-full h-full border-2 border-pink-600/30 rounded-3xl"></div>
                     </div>
-                </article>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="text-center" data-aos="fade-up">
+                    <a href="#contact" class="inline-flex items-center gap-2 text-white bg-gray-700 hover:bg-gray-600 px-8 py-3 rounded-full transition-all group">
+                        Join Our Story <i class="ri-arrow-right-line group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
             </div>
         </section>
 
         <!-- Contact & Location Section -->
-        <section id="contact" class="py-20 bg-gray-800">
-            <div class="container mx-auto px-6 text-center">
-                 <h2 class="text-3xl font-bold text-white mb-12" data-aos="fade-up" data-aos-delay="200">Visit Us or Get in Touch</h2>
-                 <div class="grid md:grid-cols-2 gap-8 text-left">
-                    <div class="bg-gray-900 p-8 rounded-lg" data-aos="fade-right" data-aos-delay="400">
-                        <h3 class="text-2xl font-semibold text-white mb-4">Location & Hours</h3>
-                        <div class="space-y-4">
-                            <div>
-                                <h4 class="font-bold text-pink-500">Address</h4>
-                                <p>Stall #8, GF, Bartmall Bldg, Sto. Rosario St, Angeles City, Pampanga (In front of Holy Angel University)</p>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-pink-500">Operating Hours</h4>
-                                <p>Open Daily: 9:00 AM - 8:00 PM</p>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-pink-500">Booking</h4>
-                                <p>Book your appointment via call or social media messaging. Walk-ins are always welcome! </p>
-                            </div>
-                            <div>
-                                <a href="https://www.facebook.com/charlie.domingo.391" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors w-full h-full" title="Visit Charlie's Barber & Salon on Facebook" rel="noopener noreferrer">
-                                    <i class="ri-facebook-circle-fill">Facebook</i>
-                                </a>
-                                <a href="https://www.tiktok.com/@angbarberongsalonista?lang=en" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors" title="Follow Charlie's Barber & Salon on TikTok" rel="noopener noreferrer">
-                                    <i class="ri-tiktok-fill w-full h-full">Tiktok</i>
-                                </a>
+        <section id="contact" class="py-24 bg-gray-900 relative overflow-hidden">
+             <!-- Background elements -->
+             <div class="absolute top-1/2 left-0 w-96 h-96 bg-pink-600/5 rounded-full blur-3xl -translate-y-1/2 pointer-events-none"></div>
+             <div class="absolute bottom-0 right-0 w-64 h-64 bg-purple-600/5 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="container mx-auto px-6 relative z-10">
+                 <div class="text-center mb-16" data-aos="fade-up">
+                    <span class="text-pink-500 font-semibold tracking-wider text-sm uppercase mb-2 block">Connect With Us</span>
+                    <h2 class="text-4xl font-bold text-white mb-4">Visit Us or Get in Touch</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto">Drop by for a fresh cut or contact us to schedule your next appointment.</p>
+                </div>
+                
+                 <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
+                    <!-- Info Card -->
+                    <div class="lg:col-span-2 glass-card p-8 rounded-3xl h-full flex flex-col justify-between" data-aos="fade-right">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-8 border-b border-gray-700 pb-4">Shop Info</h3>
+                            
+                            <div class="space-y-8">
+                                <div class="flex items-start gap-4 group">
+                                    <div class="bg-gray-800 p-3 rounded-xl text-pink-500 group-hover:bg-pink-600 group-hover:text-white transition-colors duration-300">
+                                        <i class="ri-map-pin-2-fill text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-white text-lg mb-1">Address</h4>
+                                        <p class="text-gray-400 text-sm leading-relaxed">Stall #8, GF, Bartmall Bldg, Sto. Rosario St, Angeles City, Pampanga</p>
+                                        <a href="https://maps.google.com" target="_blank" class="text-pink-500 text-sm hover:underline mt-1 inline-block">Get Directions</a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4 group">
+                                     <div class="bg-gray-800 p-3 rounded-xl text-pink-500 group-hover:bg-pink-600 group-hover:text-white transition-colors duration-300">
+                                        <i class="ri-time-fill text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-white text-lg mb-1">Operating Hours</h4>
+                                        <p class="text-gray-400 text-sm">Open Daily: <span class="text-white font-semibold">9:00 AM - 8:00 PM</span></p>
+                                        <p class="text-green-500 text-xs mt-1 flex items-center gap-1"><i class="ri-checkbox-circle-fill"></i> Walk-ins Welcome</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4 group">
+                                     <div class="bg-gray-800 p-3 rounded-xl text-pink-500 group-hover:bg-pink-600 group-hover:text-white transition-colors duration-300">
+                                        <i class="ri-smartphone-fill text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-white text-lg mb-1">Booking</h4>
+                                        <p class="text-gray-400 text-sm mb-3">Book via social media messaging or visit us directly.</p>
+                                        <div class="flex gap-3">
+                                            <a href="https://www.facebook.com/charlie.domingo.391" target="_blank" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-sm py-2 px-4 rounded-lg text-center transition-colors flex items-center justify-center gap-2">
+                                                <i class="ri-facebook-fill"></i> Message
+                                            </a>
+                                            <a href="https://www.tiktok.com/@angbarberongsalonista?lang=en" target="_blank" class="flex-1 bg-black hover:bg-gray-800 text-white text-sm py-2 px-4 rounded-lg text-center transition-colors flex items-center justify-center gap-2 border border-gray-700">
+                                                <i class="ri-tiktok-fill"></i> Follow
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-gray-700 rounded-lg overflow-hidden" data-aos="fade-left" data-aos-delay="700">
-                         <div class="w-full h-full bg-gray-900 flex items-center justify-center">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7702.925212628284!2d120.58912249868678!3d15.132918236845754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396f248caefb927%3A0xb3739bb9efd15783!2sBart%20Mall!5e0!3m2!1sen!2sph!4v1751779928602!5m2!1sen!2sph" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
+                    
+                    <!-- Map -->
+                    <div class="lg:col-span-3 rounded-3xl overflow-hidden border border-white/10 shadow-2xl h-[500px] relative group" data-aos="fade-left">
+                        <iframe class="w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7702.925212628284!2d120.58912249868678!3d15.132918236845754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396f248caefb927%3A0xb3739bb9efd15783!2sBart%20Mall!5e0!3m2!1sen!2sph!4v1751779928602!5m2!1sen!2sph" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        
+                        <!-- Map Overlay Label -->
+                        <div class="absolute bottom-6 left-6 bg-white text-gray-900 px-4 py-3 rounded-xl shadow-lg flex items-center gap-3 animate-bounce">
+                             <div class="bg-pink-600 text-white w-8 h-8 rounded-full flex items-center justify-center">
+                                <i class="ri-map-pin-2-fill"></i>
+                             </div>
+                             <div>
+                                 <p class="font-bold text-sm">We are here!</p>
+                                 <p class="text-xs text-gray-500">In front of HAU</p>
+                             </div>
+                        </div> 
                     </div>
                  </div>
             </div>
@@ -339,17 +463,51 @@
     </main>
     
     <!-- Footer -->
-    <footer class="bg-gray-900 border-t border-gray-800">
-        <div class="container mx-auto px-6 py-8">
-            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                <p class="text-sm">&copy; 2025 Charlie's Barber & Salon. All Rights Reserved.</p>
-                <div class="flex space-x-6">
-                    <a href="https://www.facebook.com/charlie.domingo.391" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors w-full h-full" title="Visit Charlie's Barber & Salon on Facebook" rel="noopener noreferrer">
-                        <i class="ri-facebook-circle-fill"></i>
+    <footer class="bg-gray-900 border-t border-gray-800 relative z-10 pt-16 pb-8 text-sm">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="col-span-1 md:col-span-2 space-y-6">
+                    <a href="#" class="text-3xl font-bold text-white tracking-tight" title="Charlie's Barber & Salon">
+                        <span class="text-pink-600">Charlie's</span> Barber
                     </a>
-                    <a href="https://www.tiktok.com/@angbarberongsalonista?lang=en" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors" title="Follow Charlie's Barber & Salon on TikTok" rel="noopener noreferrer">
-                        <i class="ri-tiktok-fill w-full h-full"></i>
-                    </a>
+                    <p class="text-gray-400 leading-relaxed max-w-sm">
+                        Elevating your style with precision cuts and personal care. We blend traditional barbering with modern aesthetics to help you look your absolute best.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="space-y-6">
+                    <h4 class="text-white font-bold text-lg tracking-wide">Explore</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#services" class="text-gray-400 hover:text-pink-500 transition-colors hover:translate-x-1 inline-block">Our Services</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-pink-500 transition-colors hover:translate-x-1 inline-block">Portfolio</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-pink-500 transition-colors hover:translate-x-1 inline-block">About Us</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-pink-500 transition-colors hover:translate-x-1 inline-block">Book Appointment</a></li>
+                    </ul>
+                </div>
+
+                <!-- Connect -->
+                 <div class="space-y-6">
+                    <h4 class="text-white font-bold text-lg tracking-wide">Follow Us</h4>
+                    <div class="flex gap-4">
+                         <a href="https://www.facebook.com/charlie.domingo.391" target="_blank" class="w-12 h-12 rounded-full bg-gray-800/50 flex items-center justify-center text-gray-400 hover:bg-pink-600 hover:text-white transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-pink-600/20" title="Follow on Facebook">
+                            <i class="ri-facebook-fill text-xl"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@angbarberongsalonista?lang=en" target="_blank" class="w-12 h-12 rounded-full bg-gray-800/50 flex items-center justify-center text-gray-400 hover:bg-black hover:text-white transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-pink-600/20" title="Follow on TikTok">
+                           <i class="ri-tiktok-fill text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4">
+                 <p class="text-gray-500 font-medium">
+                    Copyright (c) 2025 Zankcry
+                </p>
+                <div class="flex gap-6 text-gray-500">
+                    <a href="#" class="hover:text-pink-500 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-pink-500 transition-colors">Terms of Service</a>
                 </div>
             </div>
         </div>
@@ -363,19 +521,34 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
-            duration: 1000
+            duration: 1000,
+            once: true
         });
-    </script>
-    <script>
+
+        // Navbar Scroll Effect
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+             if (window.scrollY > 50) {
+                header.classList.add('bg-gray-900/90', 'backdrop-blur-md', 'shadow-lg');
+                header.classList.remove('bg-transparent', 'py-6');
+                header.querySelector('nav').classList.replace('py-4', 'py-3');
+            } else {
+                header.classList.remove('bg-gray-900/90', 'backdrop-blur-md', 'shadow-lg');
+                header.classList.add('bg-transparent', 'py-6');
+                header.querySelector('nav').classList.replace('py-3', 'py-4');
+            }
+        });
+
         const scrollIndicator = document.getElementById('scroll-indicator');
+        // ...scroll indicator logic remains similar but simplified...
         const scrollIcon = document.getElementById('scroll-icon');
 
         window.addEventListener('scroll', () => {
             // Show indicator when user scrolls down
             if (window.scrollY > 200) {
-                scrollIndicator.classList.remove('opacity-0');
+                scrollIndicator.classList.remove('opacity-0', 'pointer-events-none');
             } else {
-                scrollIndicator.classList.add('opacity-0');
+                scrollIndicator.classList.add('opacity-0', 'pointer-events-none');
             }
 
             // Check if user is near the bottom

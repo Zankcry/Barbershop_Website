@@ -1,0 +1,15 @@
+{
+  "name": "charlies-barber-website",
+  "version": "1.0.0",
+  "description": "Charlie's Barber & Salon website",
+  "scripts": {
+    "build-css": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "watch-css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}
+

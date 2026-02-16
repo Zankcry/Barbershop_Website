@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/images/optimized/favicons.png">
+
+    <meta name="robots" content="index, follow">
+
+    <title>Blog Post | Charlie's Barber & Salon</title>
+    <meta name="description" content="Read the latest haircut trends and grooming tips from Charlie's Barber & Salon in Angeles City, Pampanga.">
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="dist/output.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Animations -->
+    <link href="assets/aos/aos.css" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="assets/remixicon/remixicon.css" rel="stylesheet"/>
+</head>
+    
+<body class="bg-gray-900 text-gray-300">
+
+    <!-- Header & Navbar -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300 bg-gray-900/90 backdrop-blur-md shadow-lg">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center relative transition-all">
+            <a href="index.html" class="text-2xl font-bold text-white group" title="Charlie's Barber & Salon Home">
+                <span class="text-pink-600 group-hover:text-white transition-colors">Charlie's</span> Barber
+            </a>
+            <div class="hidden md:flex space-x-8 items-center absolute left-1/2 -translate-x-1/2">
+                <a href="index.html#services" class="text-white hover:text-pink-500 transition-colors uppercase text-sm tracking-wider">Services</a>
+                <a href="index.html#gallery" class="text-white hover:text-pink-500 transition-colors uppercase text-sm tracking-wider">Gallery</a>
+                <a href="index.html#features" class="text-white hover:text-pink-500 transition-colors uppercase text-sm tracking-wider">Features</a>
+                <a href="index.html#about" class="text-white hover:text-pink-500 transition-colors uppercase text-sm tracking-wider">About</a>
+                <a href="index.html#our-story" class="text-white hover:text-pink-500 transition-colors uppercase text-sm tracking-wider">Our Story</a>
+                <a href="index.html#contact" class="text-white hover:text-pink-500 transition-colors uppercase text-sm tracking-wider">Contact</a>
+            </div>
+            <a href="blog.html" class="bg-pink-600 text-white font-semibold px-6 py-2 rounded-full hover:bg-pink-700 hover:shadow-lg hover:shadow-pink-600/30 transition-all transform hover:-translate-y-0.5" title="Check our Blog">
+                Check our Blog
+            </a>
+        </nav>
+    </header>
+
+    <main class="pt-32 pb-24">
+        <!-- Back to Blog -->
+        <div class="container mx-auto px-6 mb-8">
+            <a href="blog.html" class="inline-flex items-center gap-2 text-gray-400 hover:text-pink-500 transition-colors group">
+                <i class="ri-arrow-left-line group-hover:-translate-x-1 transition-transform"></i> Back to Blog
+            </a>
+        </div>
+
+        <!-- Blog Post Content -->
+        <article id="blog-post" class="container mx-auto px-6 max-w-4xl">
+            <!-- Loading State -->
+            <div id="blog-loading" class="text-center py-20">
+                <i class="ri-loader-4-line text-4xl text-pink-500 animate-spin"></i>
+                <p class="text-gray-500 mt-4">Loading post...</p>
+            </div>
+
+            <!-- Post Header (populated by JS) -->
+            <header id="post-header" class="hidden mb-12" data-aos="fade-up">
+                <!-- Will be populated dynamically -->
+            </header>
+
+            <!-- Hero Image -->
+            <div id="post-hero" class="hidden rounded-2xl overflow-hidden mb-12 aspect-video" data-aos="fade-up" data-aos-delay="100">
+                <!-- Will be populated dynamically -->
+            </div>
+
+            <!-- Post Body -->
+            <div id="post-body" class="hidden space-y-16" data-aos="fade-up" data-aos-delay="200">
+                <!-- Will be populated dynamically -->
+            </div>
+
+            <!-- Conclusion -->
+            <div id="post-conclusion" class="hidden mt-16 glass-card p-8 rounded-2xl" data-aos="fade-up">
+                <!-- Will be populated dynamically -->
+            </div>
+
+            <!-- Related Posts -->
+            <div id="post-related" class="hidden mt-16 pt-16 border-t border-gray-800" data-aos="fade-up">
+                <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                    <i class="ri-article-line text-pink-500"></i> You May Also Like
+                </h3>
+                <div id="related-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Related post cards will be inserted here -->
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div id="post-cta" class="hidden text-center mt-16" data-aos="fade-up">
+                <h3 class="text-2xl font-bold text-white mb-4">Ready for a Fresh Cut?</h3>
+                <p class="text-gray-400 mb-6">Visit Charlie's Barber & Salon and get any of these trending styles.</p>
+                <a href="index.html#contact" class="inline-flex items-center gap-2 bg-pink-600 text-white font-semibold px-8 py-3 rounded-full hover:bg-pink-700 hover:shadow-lg hover:shadow-pink-600/30 transition-all transform hover:-translate-y-0.5">
+                    <i class="ri-scissors-cut-line"></i> Book an Appointment
+                </a>
+            </div>
+
+            <!-- Not Found -->
+            <div id="post-not-found" class="hidden text-center py-20">
+                <i class="ri-article-line text-6xl text-gray-700 mb-4 block"></i>
+                <h2 class="text-2xl font-bold text-white mb-2">Post Not Found</h2>
+                <p class="text-gray-500 mb-6">The blog post you're looking for doesn't exist.</p>
+                <a href="blog.html" class="text-pink-500 hover:text-pink-400 transition-colors font-semibold">Browse all posts &rarr;</a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 relative z-10 pt-16 pb-8 text-sm">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2 space-y-6">
+                    <a href="index.html" class="text-3xl font-bold text-white tracking-tight">
+                        <span class="text-pink-600">Charlie's</span> Barber
+                    </a>
+                    <p class="text-gray-400 leading-relaxed max-w-sm">
+                        Elevating your style with precision cuts and personal care. We are the top-rated <strong>barbershop in Angeles City</strong>.
+                    </p>
+                </div>
+                <div class="space-y-6">
+                    <h4 class="text-white font-bold text-lg tracking-wide">Explore</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html#services" class="text-gray-400 hover:text-pink-500 transition-colors">Our Services</a></li>
+                        <li><a href="index.html#gallery" class="text-gray-400 hover:text-pink-500 transition-colors">Portfolio</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-pink-500 transition-colors">Blog</a></li>
+                        <li><a href="index.html#contact" class="text-gray-400 hover:text-pink-500 transition-colors">Book Appointment</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-6">
+                    <h4 class="text-white font-bold text-lg tracking-wide">Follow Us</h4>
+                    <div class="flex gap-4">
+                        <a href="https://www.facebook.com/charlie.domingo.391" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-gray-800/50 flex items-center justify-center text-gray-400 hover:bg-pink-600 hover:text-white transition-all duration-300 transform hover:-translate-y-1">
+                            <i class="ri-facebook-fill text-xl"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@angbarberongsalonista?lang=en" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-gray-800/50 flex items-center justify-center text-gray-400 hover:bg-black hover:text-white transition-all duration-300 transform hover:-translate-y-1">
+                            <i class="ri-tiktok-fill text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4">
+                <p class="text-gray-500 font-medium">Copyright (c) 2026 Zankcry</p>
+                <div class="flex gap-6 text-gray-500">
+                    <a href="#" class="hover:text-pink-500 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-pink-500 transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/aos/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        async function loadBlogPost() {
+            const params = new URLSearchParams(window.location.search);
+            const postId = params.get('id');
+
+            if (!postId) {
+                showNotFound();
+                return;
+            }
+
+            try {
+                const response = await fetch('data/blog.json');
+                const posts = await response.json();
+                const post = posts.find(p => p.id === postId);
+
+                if (!post) {
+                    showNotFound();
+                    return;
+                }
+
+                // Update page title and meta
+                document.title = `${post.title} | Charlie's Barber & Salon Blog`;
+                document.querySelector('meta[name="description"]').setAttribute('content', post.excerpt);
+
+                const dateFormatted = new Date(post.date).toLocaleDateString('en-US', {
+                    year: 'numeric', month: 'long', day: 'numeric'
+                });
+
+                // Hide loading
+                document.getElementById('blog-loading').classList.add('hidden');
+
+                // Render header
+                const header = document.getElementById('post-header');
+                header.classList.remove('hidden');
+                header.innerHTML = `
+                    <div class="flex items-center gap-3 text-sm text-gray-500 mb-4">
+                        <span class="bg-pink-600/20 text-pink-500 px-3 py-1 rounded-full text-xs font-semibold">${post.category}</span>
+                        <span class="flex items-center gap-1"><i class="ri-calendar-line"></i> ${dateFormatted}</span>
+                        <span class="flex items-center gap-1"><i class="ri-time-line"></i> ${post.readTime}</span>
+                    </div>
+                    <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">${post.title}</h1>
+                    <p class="text-lg text-gray-400">${post.excerpt}</p>
+                    <div class="flex items-center gap-3 mt-6 pt-6 border-t border-gray-800">
+                        <div class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center text-white font-bold">
+                            ${post.author.charAt(0)}
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold text-sm">${post.author}</p>
+                            <p class="text-gray-500 text-xs">Charlie's Barber & Salon</p>
+                        </div>
+                    </div>
+                `;
+
+                // Render hero image
+                const hero = document.getElementById('post-hero');
+                hero.classList.remove('hidden');
+                hero.innerHTML = `
+                    <img src="${post.thumbnail}" alt="${post.thumbnailAlt}" class="w-full h-full object-cover">
+                    <p class="text-xs text-gray-600 mt-2 text-right italic">${post.thumbnailCredit}</p>
+                `;
+
+                // Render body sections
+                const body = document.getElementById('post-body');
+                body.classList.remove('hidden');
+                post.sections.forEach(section => {
+                    const sectionEl = document.createElement('section');
+                    sectionEl.className = 'space-y-6';
+                    sectionEl.innerHTML = `
+                        <h2 class="text-2xl md:text-3xl font-bold text-white">${section.heading}</h2>
+                        <div class="rounded-2xl overflow-hidden aspect-video">
+                            <img src="${section.image}" alt="${section.imageAlt}" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <p class="text-xs text-gray-600 text-right italic">${section.imageCredit}</p>
+                        <p class="text-gray-300 leading-relaxed text-lg">${section.content}</p>
+                    `;
+                    body.appendChild(sectionEl);
+                });
+
+                // Render conclusion
+                const conclusion = document.getElementById('post-conclusion');
+                conclusion.classList.remove('hidden');
+                conclusion.innerHTML = `
+                    <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                        <i class="ri-lightbulb-line text-pink-500"></i> Final Thoughts
+                    </h3>
+                    <p class="text-gray-300 leading-relaxed">${post.conclusion}</p>
+                `;
+
+                // Show CTA
+                document.getElementById('post-cta').classList.remove('hidden');
+
+                // Render related posts
+                if (post.relatedPosts && post.relatedPosts.length > 0) {
+                    const relatedContainer = document.getElementById('post-related');
+                    const relatedGrid = document.getElementById('related-grid');
+                    const relatedPostsData = posts.filter(p => post.relatedPosts.includes(p.id));
+
+                    if (relatedPostsData.length > 0) {
+                        relatedContainer.classList.remove('hidden');
+                        relatedPostsData.forEach(related => {
+                            const relDate = new Date(related.date).toLocaleDateString('en-US', {
+                                year: 'numeric', month: 'long', day: 'numeric'
+                            });
+                            const card = document.createElement('a');
+                            card.href = `blog-post.html?id=${related.id}`;
+                            card.className = 'glass-card rounded-2xl overflow-hidden group flex flex-col hover:ring-2 hover:ring-pink-600/50 transition-all duration-300';
+                            card.innerHTML = `
+                                <div class="relative overflow-hidden aspect-video">
+                                    <img src="${related.thumbnail}" alt="${related.thumbnailAlt}" loading="lazy"
+                                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                    <div class="absolute top-3 left-3">
+                                        <span class="bg-pink-600 text-white text-xs font-semibold px-3 py-1 rounded-full">${related.category}</span>
+                                    </div>
+                                </div>
+                                <div class="p-6 flex flex-col flex-1">
+                                    <div class="flex items-center gap-3 text-xs text-gray-500 mb-3">
+                                        <span class="flex items-center gap-1"><i class="ri-calendar-line"></i> ${relDate}</span>
+                                        <span class="flex items-center gap-1"><i class="ri-time-line"></i> ${related.readTime}</span>
+                                    </div>
+                                    <h4 class="text-lg font-bold text-white mb-2 group-hover:text-pink-500 transition-colors">${related.title}</h4>
+                                    <p class="text-gray-400 text-sm leading-relaxed mb-4 flex-1">${related.excerpt}</p>
+                                    <span class="text-pink-500 text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all mt-auto">
+                                        Read Article <i class="ri-arrow-right-line"></i>
+                                    </span>
+                                </div>
+                            `;
+                            relatedGrid.appendChild(card);
+                        });
+                    }
+                }
+
+            } catch (error) {
+                console.error('Failed to load blog post:', error);
+                showNotFound();
+            }
+        }
+
+        function showNotFound() {
+            document.getElementById('blog-loading').classList.add('hidden');
+            document.getElementById('post-not-found').classList.remove('hidden');
+        }
+
+        loadBlogPost();
+    </script>
+</body>
+</html>

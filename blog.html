@@ -14,8 +14,7 @@
     <title>Blog | Charlie's Barber & Salon - Haircut Trends & Tips</title>
 
     <!-- Tailwind CSS -->
-    <link rel="preload" href="dist/output.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="dist/output.css"></noscript>
+    <link rel="stylesheet" href="dist/output.css">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -68,8 +67,61 @@
         <!-- Blog Posts Grid -->
         <section class="container mx-auto px-6">
             <h2 class="sr-only">Latest blog posts</h2>
-            <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Blog posts will be loaded here dynamically -->
+            <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" style="min-height: 1300px;">
+                <article aria-hidden="true" class="glass-card rounded-2xl overflow-hidden animate-pulse">
+                    <div class="aspect-video bg-gray-800"></div>
+                    <div class="p-6 space-y-3">
+                        <div class="h-4 bg-gray-800 rounded w-3/4"></div>
+                        <div class="h-4 bg-gray-800 rounded w-1/2"></div>
+                        <div class="h-4 bg-gray-800 rounded w-full"></div>
+                        <div class="h-4 bg-gray-800 rounded w-5/6"></div>
+                    </div>
+                </article>
+                <article aria-hidden="true" class="glass-card rounded-2xl overflow-hidden animate-pulse">
+                    <div class="aspect-video bg-gray-800"></div>
+                    <div class="p-6 space-y-3">
+                        <div class="h-4 bg-gray-800 rounded w-3/4"></div>
+                        <div class="h-4 bg-gray-800 rounded w-1/2"></div>
+                        <div class="h-4 bg-gray-800 rounded w-full"></div>
+                        <div class="h-4 bg-gray-800 rounded w-5/6"></div>
+                    </div>
+                </article>
+                <article aria-hidden="true" class="glass-card rounded-2xl overflow-hidden animate-pulse">
+                    <div class="aspect-video bg-gray-800"></div>
+                    <div class="p-6 space-y-3">
+                        <div class="h-4 bg-gray-800 rounded w-3/4"></div>
+                        <div class="h-4 bg-gray-800 rounded w-1/2"></div>
+                        <div class="h-4 bg-gray-800 rounded w-full"></div>
+                        <div class="h-4 bg-gray-800 rounded w-5/6"></div>
+                    </div>
+                </article>
+                <article aria-hidden="true" class="glass-card rounded-2xl overflow-hidden animate-pulse hidden md:block">
+                    <div class="aspect-video bg-gray-800"></div>
+                    <div class="p-6 space-y-3">
+                        <div class="h-4 bg-gray-800 rounded w-3/4"></div>
+                        <div class="h-4 bg-gray-800 rounded w-1/2"></div>
+                        <div class="h-4 bg-gray-800 rounded w-full"></div>
+                        <div class="h-4 bg-gray-800 rounded w-5/6"></div>
+                    </div>
+                </article>
+                <article aria-hidden="true" class="glass-card rounded-2xl overflow-hidden animate-pulse hidden lg:block">
+                    <div class="aspect-video bg-gray-800"></div>
+                    <div class="p-6 space-y-3">
+                        <div class="h-4 bg-gray-800 rounded w-3/4"></div>
+                        <div class="h-4 bg-gray-800 rounded w-1/2"></div>
+                        <div class="h-4 bg-gray-800 rounded w-full"></div>
+                        <div class="h-4 bg-gray-800 rounded w-5/6"></div>
+                    </div>
+                </article>
+                <article aria-hidden="true" class="glass-card rounded-2xl overflow-hidden animate-pulse hidden lg:block">
+                    <div class="aspect-video bg-gray-800"></div>
+                    <div class="p-6 space-y-3">
+                        <div class="h-4 bg-gray-800 rounded w-3/4"></div>
+                        <div class="h-4 bg-gray-800 rounded w-1/2"></div>
+                        <div class="h-4 bg-gray-800 rounded w-full"></div>
+                        <div class="h-4 bg-gray-800 rounded w-5/6"></div>
+                    </div>
+                </article>
             </div>
 
             <!-- Empty State -->
@@ -150,7 +202,10 @@
                 const grid = document.getElementById('blog-grid');
                 const empty = document.getElementById('blog-empty');
 
+                grid.innerHTML = '';
+
                 if (posts.length === 0) {
+                    grid.style.minHeight = '0';
                     empty.classList.remove('hidden');
                     return;
                 }
@@ -194,8 +249,11 @@
                     grid.appendChild(card);
                 });
 
+                grid.style.minHeight = '0';
+
             } catch (error) {
                 console.error('Failed to load blog posts:', error);
+                document.getElementById('blog-grid').style.minHeight = '0';
                 document.getElementById('blog-empty').classList.remove('hidden');
             }
         }

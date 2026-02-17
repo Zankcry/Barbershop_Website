@@ -24,6 +24,15 @@
 
     <!-- Icons -->
     <link href="assets/remixicon/remixicon.css" rel="stylesheet"/>
+
+        <script id="article-structured-data" type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Article",
+                "headline": "Blog Post | Charlie's Barber & Salon",
+                "mainEntityOfPage": "https://www.charliesbarber.shop/blog-post.html"
+            }
+        </script>
 </head>
     
 <body class="bg-gray-900 text-gray-300">
@@ -184,10 +193,40 @@
                 document.querySelector('meta[name="description"]').setAttribute('content', post.excerpt);
 
                 const canonicalTag = document.querySelector('link[rel="canonical"]');
+                let articleUrl = window.location.origin + window.location.pathname;
                 if (canonicalTag) {
                     const canonicalUrl = new URL(window.location.origin + window.location.pathname);
                     canonicalUrl.searchParams.set('id', post.id);
                     canonicalTag.setAttribute('href', canonicalUrl.toString());
+                    articleUrl = canonicalUrl.toString();
+                }
+
+                const articleSchemaTag = document.getElementById('article-structured-data');
+                if (articleSchemaTag) {
+                    const articleSchema = {
+                        '@context': 'https://schema.org',
+                        '@type': 'Article',
+                        headline: post.title,
+                        description: post.excerpt,
+                        image: [post.thumbnail],
+                        datePublished: post.date,
+                        dateModified: post.date,
+                        author: {
+                            '@type': 'Person',
+                            name: post.author
+                        },
+                        publisher: {
+                            '@type': 'Organization',
+                            name: "Charlie's Barber & Salon",
+                            logo: {
+                                '@type': 'ImageObject',
+                                url: 'https://www.charliesbarber.shop/images/optimized/favicons.png'
+                            }
+                        },
+                        mainEntityOfPage: articleUrl
+                    };
+
+                    articleSchemaTag.textContent = JSON.stringify(articleSchema);
                 }
 
                 const dateFormatted = new Date(post.date).toLocaleDateString('en-US', {

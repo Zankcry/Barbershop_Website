@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="/images/optimized/favicons.png">
     <link rel="canonical" href="https://www.charliesbarber.shop/blog.html">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
 
     <meta name="description" content="Charlie's Barber & Salon Blog: tips, trends, and guides on haircuts, hair coloring, and grooming from the best barbershop in Angeles City, Pampanga.">
     <meta name="robots" content="index, follow">
@@ -12,7 +14,8 @@
     <title>Blog | Charlie's Barber & Salon - Haircut Trends & Tips</title>
 
     <!-- Tailwind CSS -->
-    <link rel="stylesheet" href="dist/output.css">
+    <link rel="preload" href="dist/output.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="dist/output.css"></noscript>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,10 +23,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Animations -->
-    <link href="assets/aos/aos.css" rel="stylesheet">
+    <link rel="preload" href="assets/aos/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/aos/aos.css"></noscript>
 
     <!-- Icons -->
-    <link href="assets/remixicon/remixicon.css" rel="stylesheet"/>
+    <link rel="preload" href="assets/remixicon/remixicon.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+    <noscript><link rel="stylesheet" href="assets/remixicon/remixicon.css"/></noscript>
+
+    <link rel="preload" as="fetch" href="data/blog.json" crossorigin="anonymous">
 </head>
     
 <body class="bg-gray-900 text-gray-300">
@@ -60,6 +67,7 @@
 
         <!-- Blog Posts Grid -->
         <section class="container mx-auto px-6">
+            <h2 class="sr-only">Latest blog posts</h2>
             <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Blog posts will be loaded here dynamically -->
             </div>
@@ -85,7 +93,7 @@
                     </p>
                 </div>
                 <div class="space-y-6">
-                    <h4 class="text-white font-bold text-lg tracking-wide">Explore</h4>
+                    <h2 class="text-white font-bold text-lg tracking-wide">Explore</h2>
                     <ul class="space-y-3">
                         <li><a href="/#services" class="text-gray-400 hover:text-pink-500 transition-colors">Our Services</a></li>
                         <li><a href="/#gallery" class="text-gray-400 hover:text-pink-500 transition-colors">Portfolio</a></li>
@@ -94,20 +102,20 @@
                     </ul>
                 </div>
                 <div class="space-y-6">
-                    <h4 class="text-white font-bold text-lg tracking-wide">Follow Us</h4>
+                    <h2 class="text-white font-bold text-lg tracking-wide">Follow Us</h2>
                     <div class="flex gap-4">
-                        <a href="https://www.facebook.com/charlie.domingo.391" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-gray-800/50 flex items-center justify-center text-gray-400 hover:bg-pink-600 hover:text-white transition-all duration-300 transform hover:-translate-y-1">
+                        <a href="https://www.facebook.com/charlie.domingo.391" target="_blank" rel="noopener noreferrer" aria-label="Visit Charlie's Barber Facebook page" title="Facebook" class="w-12 h-12 rounded-full bg-gray-800/50 flex items-center justify-center text-gray-400 hover:bg-pink-600 hover:text-white transition-all duration-300 transform hover:-translate-y-1">
                             <i class="ri-facebook-fill text-xl"></i>
                         </a>
-                        <a href="https://www.tiktok.com/@angbarberongsalonista?lang=en" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-gray-800/50 flex items-center justify-center text-gray-400 hover:bg-black hover:text-white transition-all duration-300 transform hover:-translate-y-1">
+                        <a href="https://www.tiktok.com/@angbarberongsalonista?lang=en" target="_blank" rel="noopener noreferrer" aria-label="Visit Charlie's Barber TikTok profile" title="TikTok" class="w-12 h-12 rounded-full bg-gray-800/50 flex items-center justify-center text-gray-400 hover:bg-black hover:text-white transition-all duration-300 transform hover:-translate-y-1">
                             <i class="ri-tiktok-fill text-xl"></i>
                         </a>
                     </div>
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4">
-                <p class="text-gray-500 font-medium">Copyright (c) 2026 Zankcry</p>
-                <div class="flex gap-6 text-gray-500">
+                <p class="text-gray-400 font-medium">Copyright (c) 2026 Zankcry</p>
+                <div class="flex gap-6 text-gray-400">
                     <a href="#" class="hover:text-pink-500 transition-colors">Privacy Policy</a>
                     <a href="#" class="hover:text-pink-500 transition-colors">Terms of Service</a>
                 </div>
@@ -115,9 +123,24 @@
         </div>
     </footer>
 
-    <script src="assets/aos/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: true });
+        function initAOS() {
+            const script = document.createElement('script');
+            script.src = 'assets/aos/aos.js';
+            script.defer = true;
+            script.onload = () => {
+                if (window.AOS) {
+                    window.AOS.init({ duration: 1000, once: true });
+                }
+            };
+            document.body.appendChild(script);
+        }
+
+        if ('requestIdleCallback' in window) {
+            window.requestIdleCallback(initAOS, { timeout: 1200 });
+        } else {
+            window.setTimeout(initAOS, 400);
+        }
 
         // Load blog posts from JSON
         async function loadBlogPosts() {
@@ -145,21 +168,21 @@
                     card.innerHTML = `
                         <a href="blog-post.html?id=${post.id}" class="block">
                             <div class="relative overflow-hidden aspect-video">
-                                <img src="${post.thumbnail}" alt="${post.thumbnailAlt}" loading="lazy" 
+                                <img src="${post.thumbnail}" alt="${post.thumbnailAlt}" loading="lazy" decoding="async" width="1280" height="720"
                                      class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                                 <div class="absolute top-4 left-4">
                                     <span class="bg-pink-600 text-white text-xs font-semibold px-3 py-1 rounded-full">${post.category}</span>
                                 </div>
                             </div>
                             <div class="p-6">
-                                <div class="flex items-center gap-3 text-sm text-gray-500 mb-3">
+                                <div class="flex items-center gap-3 text-sm text-gray-400 mb-3">
                                     <span class="flex items-center gap-1"><i class="ri-calendar-line"></i> ${dateFormatted}</span>
                                     <span class="flex items-center gap-1"><i class="ri-time-line"></i> ${post.readTime}</span>
                                 </div>
-                                <h2 class="text-xl font-bold text-white mb-3 group-hover:text-pink-500 transition-colors">${post.title}</h2>
+                                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-pink-500 transition-colors">${post.title}</h3>
                                 <p class="text-gray-400 text-sm leading-relaxed mb-4">${post.excerpt}</p>
                                 <div class="flex items-center justify-between">
-                                    <span class="text-sm text-gray-500">By ${post.author}</span>
+                                    <span class="text-sm text-gray-400">By ${post.author}</span>
                                     <span class="text-pink-500 text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
                                         Read More <i class="ri-arrow-right-line"></i>
                                     </span>

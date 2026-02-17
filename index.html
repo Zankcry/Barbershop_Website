@@ -18,6 +18,10 @@
     <link rel="icon" type="image/png" href="/images/optimized/favicons.png">
     <link rel="canonical" href="https://www.charliesbarber.shop/">
     <link rel="alternate" hreflang="en" href="https://www.charliesbarber.shop/">
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
 
     <meta name="description" content="Charlie's Barber & Salon: top-rated barbershop in Angeles City, Pampanga. Haircuts from ₱100, hair coloring, fades & styling near Holy Angel University (HAU). Open daily 9 AM to 8 PM. Walk-ins welcome!">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -28,7 +32,8 @@
     <link rel="preload" as="image" href="images/optimized/store.webp">
 
     <!-- Tailwind CSS (Production Build) -->
-    <link rel="stylesheet" href="dist/output.css">
+    <link rel="preload" href="dist/output.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="dist/output.css"></noscript>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,10 +41,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Animations -->
-    <link href="assets/aos/aos.css" rel="stylesheet">
+    <link rel="preload" href="assets/aos/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/aos/aos.css"></noscript>
 
     <!-- Icons -->
-    <link href="assets/remixicon/remixicon.css" rel="stylesheet"/>
+    <link rel="preload" href="assets/remixicon/remixicon.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+    <noscript><link rel="stylesheet" href="assets/remixicon/remixicon.css"/></noscript>
 
         <script type="application/ld+json">
             {
@@ -121,7 +128,7 @@
     <main>
     <!-- Hero Section -->
     <section class="relative h-screen min-h-[600px] flex items-center justify-center text-center text-white overflow-hidden">
-        <div class="absolute inset-0 bg-fixed bg-cover bg-center z-0 transform scale-110 motion-safe:animate-pulse-slow" style="background-image: url('images/optimized/store.webp'); animation-duration: 20s;" role="img" aria-label="Charlie's Barber & Salon storefront"></div>
+        <img src="images/optimized/store.webp" alt="Charlie's Barber & Salon storefront" fetchpriority="high" loading="eager" decoding="async" class="absolute inset-0 w-full h-full object-cover bg-center z-0 transform scale-110 motion-safe:animate-pulse-slow" style="animation-duration: 20s;">
         <div class="absolute inset-0 bg-gradient-to-b from-gray-900/40 via-gray-900/70 to-gray-900 z-10"></div>
         
         <!-- Floating shapes -->
@@ -148,7 +155,7 @@
 
         <!-- Hero Scroll Indicator -->
         <div class="absolute bottom-10 w-full flex justify-center z-20 animate-bounce pointer-events-none">
-            <a href="#services" class="text-white/50 hover:text-white transition-colors pointer-events-auto">
+            <a href="#services" aria-label="Scroll to services section" title="Scroll to services" class="text-white/50 hover:text-white transition-colors pointer-events-auto">
                 <i class="ri-arrow-down-double-line text-3xl"></i>
             </a>
         </div>
@@ -274,8 +281,8 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 
                 <div data-aos="slide-right">
-                    <video class="w-full max-w-md h-auto mx-auto rounded-lg shadow-2xl" loop autoplay muted playsinline>
-                        <source src="video/styles.mp4" type="video/mp4">
+                    <video class="w-full max-w-md h-auto mx-auto rounded-lg shadow-2xl" loop muted playsinline preload="none" data-autoplay="true">
+                        <source data-src="video/styles.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -286,16 +293,16 @@
                     
                     <div class="grid grid-cols-2 gap-4">
                         <div>
-                            <video class="w-full rounded-lg" loop autoplay muted playsinline>
-                                <source src="video/color.mp4" type="video/mp4">
+                            <video class="w-full rounded-lg" loop muted playsinline preload="none" data-autoplay="true">
+                                <source data-src="video/color.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                             <h4 class="text-lg font-semibold text-white mt-3">Vibrant Colors</h4>
                             <p class="text-sm text-gray-400">Bold and beautiful styles.</p>
                         </div>
                         <div>
-                            <video class="w-full rounded-lg" loop autoplay muted playsinline>
-                                <source src="video/highlight.mp4" type="video/mp4">
+                            <video class="w-full rounded-lg" loop muted playsinline preload="none" data-autoplay="true">
+                                <source data-src="video/highlight.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                             <h4 class="text-lg font-semibold text-white mt-3">Precision Highlights</h4>
@@ -379,15 +386,15 @@
                             <div class="grid grid-cols-3 gap-4 pt-6 border-t border-gray-700">
                                 <div class="text-center">
                                     <div class="text-pink-500 font-bold text-xl mb-1">100%</div>
-                                    <div class="text-xs text-gray-500 uppercase tracking-wider">Passion</div>
+                                    <div class="text-xs text-gray-400 uppercase tracking-wider">Passion</div>
                                 </div>
                                 <div class="text-center">
                                     <div class="text-pink-500 font-bold text-xl mb-1">Top</div>
-                                    <div class="text-xs text-gray-500 uppercase tracking-wider">Quality</div>
+                                    <div class="text-xs text-gray-400 uppercase tracking-wider">Quality</div>
                                 </div>
                                  <div class="text-center">
                                     <div class="text-pink-500 font-bold text-xl mb-1">Local</div>
-                                    <div class="text-xs text-gray-500 uppercase tracking-wider">Favorite</div>
+                                    <div class="text-xs text-gray-400 uppercase tracking-wider">Favorite</div>
                                 </div>
                             </div>
                         </div>
@@ -482,7 +489,7 @@
                              </div>
                              <div>
                                  <p class="font-bold text-sm">We are here!</p>
-                                 <p class="text-xs text-gray-500">In front of HAU</p>
+                                 <p class="text-xs text-gray-700">In front of HAU</p>
                              </div>
                         </div> 
                     </div>
@@ -515,18 +522,18 @@
                 <div class="space-y-6">
                     <h4 class="text-white font-bold text-lg tracking-wide">Follow Us</h4>
                     <div class="flex gap-4">
-                        <a href="https://www.facebook.com/charlie.domingo.391" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-gray-800/50 flex items-center justify-center text-gray-400 hover:bg-pink-600 hover:text-white transition-all duration-300 transform hover:-translate-y-1">
+                        <a href="https://www.facebook.com/charlie.domingo.391" target="_blank" rel="noopener noreferrer" aria-label="Visit Charlie's Barber Facebook page" title="Facebook" class="w-12 h-12 rounded-full bg-gray-800/50 flex items-center justify-center text-gray-400 hover:bg-pink-600 hover:text-white transition-all duration-300 transform hover:-translate-y-1">
                             <i class="ri-facebook-fill text-xl"></i>
                         </a>
-                        <a href="https://www.tiktok.com/@angbarberongsalonista?lang=en" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-gray-800/50 flex items-center justify-center text-gray-400 hover:bg-black hover:text-white transition-all duration-300 transform hover:-translate-y-1">
+                        <a href="https://www.tiktok.com/@angbarberongsalonista?lang=en" target="_blank" rel="noopener noreferrer" aria-label="Visit Charlie's Barber TikTok profile" title="TikTok" class="w-12 h-12 rounded-full bg-gray-800/50 flex items-center justify-center text-gray-400 hover:bg-black hover:text-white transition-all duration-300 transform hover:-translate-y-1">
                             <i class="ri-tiktok-fill text-xl"></i>
                         </a>
                     </div>
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4">
-                <p class="text-gray-500 font-medium">Copyright (c) 2026 Zankcry</p>
-                <div class="flex gap-6 text-gray-500">
+                <p class="text-gray-400 font-medium">Copyright (c) 2026 Zankcry</p>
+                <div class="flex gap-6 text-gray-400">
                     <a href="#" class="hover:text-pink-500 transition-colors">Privacy Policy</a>
                     <a href="#" class="hover:text-pink-500 transition-colors">Terms of Service</a>
                 </div>
@@ -535,60 +542,111 @@
     </footer>
 
     <!-- Scroll to Bottom Indicator -->
-    <div id="scroll-indicator" class="fixed bottom-8 right-8 z-50 p-3 bg-pink-600 text-white rounded-full shadow-lg cursor-pointer transition-opacity duration-300 opacity-0">
+    <div id="scroll-indicator" role="button" tabindex="0" aria-label="Scroll to bottom or back to top" class="fixed bottom-8 right-8 z-50 p-3 bg-pink-600 text-white rounded-full shadow-lg cursor-pointer transition-opacity duration-300 opacity-0 pointer-events-none">
         <i id="scroll-icon" class="ri-arrow-down-line text-2xl"></i>
     </div>
 
-    <script src="assets/aos/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
-
         // Navbar Scroll Effect
         const header = document.querySelector('header');
-        window.addEventListener('scroll', () => {
-             if (window.scrollY > 50) {
-                header.classList.add('bg-gray-900/90', 'backdrop-blur-md', 'shadow-lg');
-                header.classList.remove('bg-transparent', 'py-6');
-                header.querySelector('nav').classList.replace('py-4', 'py-3');
-            } else {
-                header.classList.remove('bg-gray-900/90', 'backdrop-blur-md', 'shadow-lg');
-                header.classList.add('bg-transparent', 'py-6');
-                header.querySelector('nav').classList.replace('py-3', 'py-4');
-            }
-        });
+        const nav = header.querySelector('nav');
 
         const scrollIndicator = document.getElementById('scroll-indicator');
-        // ...scroll indicator logic remains similar but simplified...
         const scrollIcon = document.getElementById('scroll-icon');
+        let isScrollTicking = false;
+
+        function updateOnScroll() {
+            const scrollY = window.scrollY;
+            const isHeaderCompact = scrollY > 50;
+            const isNearBottom = (window.innerHeight + scrollY) >= (document.documentElement.scrollHeight - 200);
+
+            header.classList.toggle('bg-gray-900/90', isHeaderCompact);
+            header.classList.toggle('backdrop-blur-md', isHeaderCompact);
+            header.classList.toggle('shadow-lg', isHeaderCompact);
+            header.classList.toggle('bg-transparent', !isHeaderCompact);
+            header.classList.toggle('py-6', !isHeaderCompact);
+
+            nav.classList.toggle('py-3', isHeaderCompact);
+            nav.classList.toggle('py-4', !isHeaderCompact);
+
+            scrollIndicator.classList.toggle('opacity-0', scrollY <= 200);
+            scrollIndicator.classList.toggle('pointer-events-none', scrollY <= 200);
+
+            scrollIcon.classList.toggle('ri-arrow-up-line', isNearBottom);
+            scrollIcon.classList.toggle('ri-arrow-down-line', !isNearBottom);
+        }
 
         window.addEventListener('scroll', () => {
-            // Show indicator when user scrolls down
-            if (window.scrollY > 200) {
-                scrollIndicator.classList.remove('opacity-0', 'pointer-events-none');
-            } else {
-                scrollIndicator.classList.add('opacity-0', 'pointer-events-none');
+            if (isScrollTicking) {
+                return;
             }
 
-            // Check if user is near the bottom
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 200) {
-                scrollIcon.classList.remove('ri-arrow-down-line');
-                scrollIcon.classList.add('ri-arrow-up-line');
-            } else {
-                scrollIcon.classList.remove('ri-arrow-up-line');
-                scrollIcon.classList.add('ri-arrow-down-line');
+            isScrollTicking = true;
+            window.requestAnimationFrame(() => {
+                updateOnScroll();
+                isScrollTicking = false;
+            });
+        }, { passive: true });
+
+        function handleScrollIndicatorClick() {
+            const isNearBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 200);
+            window.scrollTo({ top: isNearBottom ? 0 : document.documentElement.scrollHeight, behavior: 'smooth' });
+        }
+
+        scrollIndicator.addEventListener('click', handleScrollIndicatorClick);
+        scrollIndicator.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                handleScrollIndicatorClick();
             }
         });
 
-        scrollIndicator.addEventListener('click', () => {
-             if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 200) {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            } else {
-                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-            }
-        });
+        function initAOS() {
+            const script = document.createElement('script');
+            script.src = 'assets/aos/aos.js';
+            script.defer = true;
+            script.onload = () => {
+                if (window.AOS) {
+                    window.AOS.init({
+                        duration: 1000,
+                        once: true
+                    });
+                }
+            };
+            document.body.appendChild(script);
+        }
+
+        if ('requestIdleCallback' in window) {
+            window.requestIdleCallback(initAOS, { timeout: 1500 });
+        } else {
+            window.setTimeout(initAOS, 500);
+        }
+
+        const lazyVideos = document.querySelectorAll('video[data-autoplay="true"]');
+        const lazyVideoObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+
+                const video = entry.target;
+                const source = video.querySelector('source[data-src]');
+
+                if (source && !source.src) {
+                    source.src = source.dataset.src;
+                    video.load();
+                    const playPromise = video.play();
+                    if (playPromise) {
+                        playPromise.catch(() => {});
+                    }
+                }
+
+                observer.unobserve(video);
+            });
+        }, { rootMargin: '200px 0px' });
+
+        lazyVideos.forEach((video) => lazyVideoObserver.observe(video));
+        updateOnScroll();
     </script>
 
     <!-- Vercel Web Analytics -->

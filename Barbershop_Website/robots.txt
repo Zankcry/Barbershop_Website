@@ -1,9 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /src/
-
-# Main Sitemap
-Sitemap: https://www.charliesbarber.shop/sitemap.xml
-
-# Crawl-delay (optional, for well-behaved bots)
-Crawl-delay: 1

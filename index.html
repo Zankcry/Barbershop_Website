@@ -29,7 +29,7 @@
     <title>Barbershops in Angeles City | Charlie's Barber & Salon - Best Haircuts Near HAU</title>
 
     <!-- Preload Hero Image -->
-    <link rel="preload" as="image" href="images/optimized/store.webp">
+    <link rel="preload" as="image" href="images/optimized/store-960.webp" imagesrcset="images/optimized/store-640.webp 640w, images/optimized/store-960.webp 960w, images/optimized/store-1280.webp 1280w, images/optimized/store.webp 1920w" imagesizes="100vw">
 
     <!-- Tailwind CSS (Production Build) -->
     <link rel="stylesheet" href="dist/output.css">
@@ -37,13 +37,16 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
 
     <!-- Animations -->
-    <link href="assets/aos/aos.css" rel="stylesheet">
+    <link rel="preload" href="assets/aos/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="assets/aos/aos.css" rel="stylesheet"></noscript>
 
     <!-- Icons -->
-    <link href="assets/remixicon/remixicon.css" rel="stylesheet"/>
+    <link rel="preload" href="assets/remixicon/remixicon.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+    <noscript><link href="assets/remixicon/remixicon.css" rel="stylesheet"/></noscript>
 
         <script type="application/ld+json">
             {
@@ -125,7 +128,7 @@
     <main>
     <!-- Hero Section -->
     <section class="relative h-screen min-h-[600px] flex items-center justify-center text-center text-white overflow-hidden">
-        <img src="images/optimized/store.webp" alt="Charlie's Barber & Salon storefront" width="1920" height="2560" fetchpriority="high" loading="eager" decoding="async" class="absolute inset-0 w-full h-full object-cover bg-center z-0 transform scale-110 motion-safe:animate-pulse-slow" style="animation-duration: 20s;">
+        <img src="images/optimized/store-960.webp" srcset="images/optimized/store-640.webp 640w, images/optimized/store-960.webp 960w, images/optimized/store-1280.webp 1280w, images/optimized/store.webp 1920w" sizes="100vw" alt="Charlie's Barber & Salon storefront" width="1920" height="2560" fetchpriority="high" loading="eager" class="absolute inset-0 w-full h-full object-cover bg-center z-0 transform scale-110 motion-safe:animate-pulse-slow" style="animation-duration: 20s;">
         <div class="absolute inset-0 bg-gradient-to-b from-gray-900/40 via-gray-900/70 to-gray-900 z-10"></div>
         
         <!-- Floating shapes -->

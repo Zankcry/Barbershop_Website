@@ -109,47 +109,50 @@
     "date": "2026-02-17",
     "category": "Hair Health",
     "readTime": "7 min read",
-    "thumbnail": "https://unsplash.com/photos/a-woman-with-long-dark-hair-wearing-a-tan-coat-W0m9RQ4JDo4",
+
+    "thumbnail": "https://plus.unsplash.com/premium_photo-1729291142535-ce2c79f78003?auto=format&fit=crop&w=800&q=80&fm=webp",
     "thumbnailAlt": "Woman with long dark hair wearing a tan coat standing outdoors",
     "thumbnailCredit": "Photo by Yunus Tuğ on Unsplash",
+
     "sections": [
       {
         "heading": "1. The Big Picture: Supplements Only Help Deficiencies",
-        "image": "https://unsplash.com/photos/a-group-of-bottles-next-to-a-plant-A1vTsRrV9oY",
+        "image": "https://images.unsplash.com/photo-1669281393403-e1f3248dce2b?auto=format&fit=crop&w=800&q=80&fm=webp",
         "imageAlt": "A group of supplement bottles next to a plant on a wooden table",
         "imageCredit": "Photo by Lora Seis on Unsplash",
-        "content": "Hair growth is a slow biological process, and supplements don’t magically speed it up unless your body is missing key nutrients. Most studies show that supplements improve hair thickness or shedding only when a true deficiency exists. If your diet is balanced and your labs are normal, extra pills usually provide little benefit. Think of supplements as a correction tool, not a growth shortcut. If you’re seeing sudden shedding, focus first on sleep, stress, and protein intake, then consider checking iron or vitamin D levels with a healthcare professional. Also remember that hair reflects the last 2–3 months of health; a supplement started today won’t show results for weeks, and consistency matters far more than a quick 7-day trial."
+        "content": "Hair growth is a slow biological process..."
       },
       {
         "heading": "2. Biotin, Collagen, and Keratin: The Popular Trio",
-        "image": "https://unsplash.com/photos/a-bunch-of-bubbles-floating-in-the-air-zNRTxocOYmM",
+        "image": "https://plus.unsplash.com/premium_photo-1671526171121-36626cbbda6f?auto=format&fit=crop&w=800&q=80&fm=webp",
         "imageAlt": "Bunch of bubbles floating in the air representing hair growth supplements",
         "imageCredit": "Photo by Osarugue Igbinoba on Unsplash",
-        "content": "Biotin is often marketed for hair, but true biotin deficiency is rare. Taking extra biotin might help brittle nails, but evidence for thicker hair is mixed. Collagen and keratin supplements can support overall protein intake, yet they still need to be broken down into amino acids before your body uses them. If your diet already includes enough protein, the added benefit is minimal. For many people, a food-first approach (eggs, fish, lean meats, beans) provides the same building blocks without the marketing hype. If you want to try a supplement anyway, choose one with realistic doses and a clear ingredient list, then track changes in shedding, breakage, and scalp comfort for at least 8–12 weeks."
+        "content": "Biotin is often marketed for hair..."
       },
       {
         "heading": "3. The Nutrients That Actually Matter",
-        "image": "https://unsplash.com/photos/brown-gel-close-up-photography-przZDqzZKpk",
+        "image": "https://images.unsplash.com/photo-1565071783280-719b01b29912?auto=format&fit=crop&w=800&q=80&fm=webp",
         "imageAlt": "Bowl of leafy greens and nuts rich in nutrients",
         "imageCredit": "Photo by Michele Blackwell on Unsplash",
-        "content": "The strongest links to hair health are iron, vitamin D, zinc, and protein. Low ferritin (iron stores) can drive shedding, especially in women. Vitamin D is tied to hair follicle cycling, and low levels are common in people with limited sun exposure. Zinc helps with tissue repair and follicle function. If you choose a supplement, aim for a balanced formula with reasonable doses, not mega-doses. More is not better; excess can cause side effects or interact with medications. For example, too much zinc can lower copper, and excessive vitamin A can worsen shedding."
+        "content": "The strongest links to hair health are iron..."
       },
       {
         "heading": "4. How to Choose a Supplement Safely",
-        "image": "https://unsplash.com/photos/a-gloved-hand-holding-a-test-tube-filled-with-liquid-fKC9eWRnlGY",
+        "image": "https://images.unsplash.com/photo-1639772823849-6efbd173043c?auto=format&fit=crop&w=800&q=80&fm=webp",
         "imageAlt": "Gloved hand holding a test tube filled with liquid in a laboratory setting",
         "imageCredit": "Photo by Akram Huseyn on Unsplash",
-        "content": "Pick products that list exact amounts, avoid proprietary blends, and look for third-party testing (USP, NSF, or Informed Choice). Be cautious with high-dose biotin: it can interfere with lab tests like thyroid or cardiac panels. If you’re already taking a multivitamin, double-check total doses to prevent stacking. A simple, well-formulated supplement plus a protein-rich diet beats fancy gummies with sugar and tiny nutrient amounts. Also check for added herbs that may interact with medications, and avoid “detox” blends that promise rapid results without evidence."
+        "content": "Pick products that list exact amounts..."
       },
       {
         "heading": "5. Who Should Skip Supplements (and When to See a Pro)",
-        "image": "https://unsplash.com/photos/young-male-doctor-giving-pills-bottle-to-female-patient-in-clinic-CL0PjlQyysg",
+        "image": "https://plus.unsplash.com/premium_photo-1667520026139-f1dde9ab1074?auto=format&fit=crop&w=800&q=80&fm=webp",
         "imageAlt": "Young male doctor giving a pill bottle to a female patient in a clinic",
         "imageCredit": "Photo by Getty Images on Unsplash",
-        "content": "If you’re already eating well, sleeping enough, and have no signs of deficiency, supplements are unlikely to transform hair density. People with thyroid issues, recent childbirth, sudden weight loss, or high stress should focus on medical causes first, because pills won’t fix the root problem. See a healthcare professional if shedding is rapid, patchy, or accompanied by scalp irritation. A simple blood panel can reveal iron, vitamin D, or thyroid issues that are much more important than any single capsule. If lab work is normal, put your budget into better food, not more pills. Supplements should support a plan, not replace one."
+        "content": "If you’re already eating well..."
       }
     ],
-    "conclusion": "Supplements can support hair health when your body truly needs them, but they’re not a shortcut to faster growth. Prioritize protein, sleep, stress management, and consistent scalp care. If shedding feels sudden or severe, get checked for iron or vitamin D first. For most people, the best strategy is consistent nutrition, gentle grooming, and patience while the growth cycle catches up. Track progress with monthly photos instead of daily mirror checks, because hair changes slowly. For more on how hair grows and why some people shed more than others, read our guide on <a href='blog-post.html?id=hair-growth-biology' class='text-pink-500 hover:text-pink-400 underline transition-colors'>hair growth biology</a>.",
+
+    "conclusion": "Supplements can support hair health when your body truly needs them...",
     "relatedPosts": ["hair-growth-biology"]
   },
   {
@@ -160,54 +163,57 @@
     "date": "2026-02-17",
     "category": "Hair Science",
     "readTime": "6 min read",
+
     "thumbnail": "https://images.pexels.com/photos/3992933/pexels-photo-3992933.jpeg?auto=compress&cs=tinysrgb&w=800",
-    "thumbnailAlt": "Close-up portrait highlighting healthy hair and scalp",
-    "thumbnailCredit": "Photo by cottonbro studio on Pexels",
+    "thumbnailAlt": "Virus cells under a microscope representing the biology of hair growth",
+    "thumbnailCredit": "Photo by CDC on Pexels",
+
     "sections": [
       {
         "heading": "1. The Hair Follicle Is a Mini-Organ",
-        "image": "https://unsplash.com/photos/a-3d-render-of-a-microscopic-closeup-view-of-strands-of-textured-hair-rooted-in-skin-on-a-scalp-on-a-dark-background-nu6x4w109Pk",
-        "imageAlt": "3D render of a microscopic close-up view of strands of textured hair rooted in skin on a scalp",
+        "image": "https://plus.unsplash.com/premium_photo-1681400577539-bcceed985cf1?auto=format&fit=crop&w=800&q=80&fm=webp",
+        "imageAlt": "3D render of hair strands rooted in skin on a scalp",
         "imageCredit": "Photo by Getty Images on Unsplash",
-        "content": "Each hair grows from a follicle, which is a complex mini-organ with its own stem cells, blood supply, and hormonal signals. The follicle produces the hair shaft and anchors it in the scalp. This is why good circulation, hormone balance, and adequate nutrition matter—follicles need energy and building materials to keep producing strong strands. Even minor inflammation around the follicle can disrupt growth, which is why scalp health and gentle care make a bigger difference than most people expect."
+        "content": "Each hair grows from a follicle..."
       },
       {
         "heading": "2. The Three Growth Phases",
-        "image": "https://unsplash.com/photos/a-person-placing-a-piece-of-wood-into-a-pyramid-vsLbaIdhwaU",
-        "imageAlt": "Person placing a piece of wood into a pyramid structure representing the hair growth cycle",
+        "image": "https://images.unsplash.com/photo-1730382624709-81e52dd294d4?auto=format&fit=crop&w=800&q=80&fm=webp",
+        "imageAlt": "Structure representing the hair growth cycle",
         "imageCredit": "Photo by Imagine Buddy on Unsplash",
-        "content": "Hair cycles through anagen (growth), catagen (transition), and telogen (rest). Anagen can last 2–7 years, which is why some people grow long hair easily. Catagen is brief—only a couple of weeks. Telogen lasts around 3 months, then the hair sheds and a new cycle begins. Shedding 50–100 hairs per day is normal because thousands of follicles are always at different stages. When stress, illness, or a crash diet shifts more follicles into telogen, a bigger shed happens later, which is why timing can feel confusing."
+        "content": "Hair cycles through anagen (growth)..."
       },
       {
         "heading": "3. Why Hair Thins Over Time",
-        "image": "https://unsplash.com/photos/a-digital-image-of-a-blue-and-yellow-double-stranded-structure-Wv4_wHutWXg",
-        "imageAlt": "Digital image of a blue and yellow double-stranded structure representing DNA",
+        "image": "https://plus.unsplash.com/premium_photo-1676029884460-f70234f9c6f6?auto=format&fit=crop&w=800&q=80&fm=webp",
+        "imageAlt": "Digital structure representing genetics and DNA",
         "imageCredit": "Photo by TSD Studio on Unsplash",
-        "content": "Genetics and hormones are the biggest drivers of long-term thinning. DHT (a hormone derived from testosterone) can shrink follicles in people who are genetically sensitive, shortening the anagen phase and making hairs finer over time. Stress, illness, and rapid weight changes can also push more hairs into the telogen phase, leading to a noticeable shed a few months later. Chronic scalp inflammation, tight hairstyles, or harsh chemical treatments can also contribute by weakening the hair shaft and irritating follicles."
+        "content": "Genetics and hormones are the biggest drivers..."
       },
       {
         "heading": "4. What Actually Influences Growth Rate",
-        "image": "https://unsplash.com/photos/a-bowl-of-soup-with-broccoli-carrots-celery-z-bx5ZqxHPA",
-        "imageAlt": "Bowl of soup with broccoli, carrots, and celery",
+        "image": "https://plus.unsplash.com/premium_photo-1705851313830-78e4f977d210?auto=format&fit=crop&w=800&q=80&fm=webp",
+        "imageAlt": "Healthy meal with vegetables representing nutrition",
         "imageCredit": "Photo by Monika Grabkowska on Unsplash",
-        "content": "Hair typically grows about 1–1.5 cm per month, and that rate is mostly genetic. But you can protect growth potential by minimizing breakage (gentle washing and combing), getting enough protein, and correcting iron or vitamin D deficiencies. Keeping the scalp clean and calm helps follicles stay in their strongest growth phase longer. If you’re considering supplements, make sure you understand the evidence first in our guide to <a href='blog-post.html?id=hair-supplements-what-works' class='text-pink-500 hover:text-pink-400 underline transition-colors'>hair supplements</a>."
+        "content": "Hair typically grows about 1–1.5 cm per month..."
       },
       {
         "heading": "5. Scalp Environment and Inflammation",
-        "image": "https://unsplash.com/photos/woman-in-white-shirt-with-blonde-hair-CIrRI0ujiRo",
-        "imageAlt": "Woman with blonde hair in a white shirt",
+        "image": "https://images.unsplash.com/photo-1605980766335-d3a41c7332a1?auto=format&fit=crop&w=800&q=80&fm=webp",
+        "imageAlt": "Woman with blonde hair representing scalp health",
         "imageCredit": "Photo by Lera Kogan on Unsplash",
-        "content": "Follicles thrive in a stable, low‑inflammation environment. Dandruff, seborrheic dermatitis, or persistent itch can disrupt the skin barrier and make shedding feel worse. The fix is usually simple: regular washing, a gentle shampoo, and targeted treatments like zinc pyrithione or ketoconazole when flakes are stubborn. Over‑scrubbing the scalp or using harsh alcohol-heavy products can backfire, so aim for calm, consistent care instead of aggressive exfoliation. A healthy scalp is the foundation for any growth plan."
+        "content": "Follicles thrive in a stable, low-inflammation environment..."
       },
       {
         "heading": "6. Small Habits That Protect Growth",
-        "image": "https://unsplash.com/photos/a-woman-is-smiling-and-holding-a-hair-brush-ZEAj1R5K1uY",
+        "image": "https://plus.unsplash.com/premium_photo-1666264200753-f66637734dbc?auto=format&fit=crop&w=800&q=80&fm=webp",
         "imageAlt": "Woman smiling while holding a hair brush",
         "imageCredit": "Photo by Thais Varela on Unsplash",
-        "content": "You can’t change your genetics, but you can reduce daily damage. Detangle with a wide‑tooth comb, avoid tight styles that pull at the hairline, and limit heat tools to the lowest effective setting. If you color or bleach, space sessions out and ask for bond‑repair treatments. Sleep also matters: most hair growth hormones peak overnight, so consistent rest helps follicles stay in their active phase. Limit chlorine exposure, rinse after swims, and use a light conditioner to reduce friction. If you sweat often, a quick water rinse keeps salt buildup from irritating the scalp. These habits won’t create instant growth, but they protect the hair you already have."
+        "content": "You can’t change your genetics..."
       }
     ],
-    "conclusion": "Healthy hair growth is a cycle, not a quick sprint. Focus on scalp health, balanced nutrition, and realistic expectations for growth. If thinning feels sudden or severe, consult a professional to rule out nutrient deficiencies or hormonal causes. A doctor or dermatologist can also check for scalp conditions that quietly slow growth. Most importantly, give any routine at least three months before judging results, because follicles need time to respond. If shedding continues beyond six months, document it and bring notes to your appointment for better guidance. Your barber can help with styles that add volume while you support hair health from the inside out.",
+
+    "conclusion": "Healthy hair growth is a cycle, not a quick sprint...",
     "relatedPosts": ["hair-supplements-what-works"]
   }
 ]

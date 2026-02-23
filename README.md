@@ -1,6 +1,6 @@
 # Charlie's Barber & Salon
 
-<img width="1898" height="800" alt="image" src="https://github.com/user-attachments/assets/377f6c25-6236-4c10-9450-b09c5f9ad758" />
+<img width="1905" height="913" alt="{2A4CD074-297C-4EA1-82B6-D396A40E06FB}" src="https://github.com/user-attachments/assets/403a50a0-9171-47f4-94f3-1f39560e00cf" />
 
 A modern, responsive barbershop and salon website showcasing professional haircut services, hair coloring, and styling services in Angeles City, Pampanga.
 

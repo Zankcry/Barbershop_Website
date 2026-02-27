@@ -47,4 +47,56 @@
     <priority>0.80</priority>
   </url>
 
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://www.charliesbarber.shop/blog/hair-supplements-what-works.html</loc>
+    <lastmod>2026-02-27T00:00:00+08:00</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.charliesbarber.shop/blog/hair-growth-biology.html</loc>
+    <lastmod>2026-02-27T00:00:00+08:00</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.charliesbarber.shop/blog/hair-care-rituals-2026.html</loc>
+    <lastmod>2026-02-27T00:00:00+08:00</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.charliesbarber.shop/blog/hair-chemistry-at-home.html</loc>
+    <lastmod>2026-02-27T00:00:00+08:00</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.charliesbarber.shop/blog/essential-barber-tools.html</loc>
+    <lastmod>2026-02-27T00:00:00+08:00</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.charliesbarber.shop/blog/best-haircuts-for-hot-weather.html</loc>
+    <lastmod>2026-02-27T00:00:00+08:00</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.charliesbarber.shop/blog/ultimate-hair-care-guide.html</loc>
+    <lastmod>2026-02-27T00:00:00+08:00</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.charliesbarber.shop/blog/young-men-balding-stop-the-spot.html</loc>
+    <lastmod>2026-02-27T00:00:00+08:00</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.charliesbarber.shop/blog/top-5-haircuts-2026.html</loc>
+    <lastmod>2026-02-27T00:00:00+08:00</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.charliesbarber.shop/blog/japanese-haircuts-guide.html</loc>
+    <lastmod>2026-02-27T00:00:00+08:00</lastmod>
+    <priority>0.70</priority>
+  </url>
+
 </urlset>

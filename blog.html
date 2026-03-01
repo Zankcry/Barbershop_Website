@@ -281,7 +281,7 @@
                     card.setAttribute('data-aos-delay', (index * 100).toString());
 
                     card.innerHTML = `
-                        <a href="blog/${post.id}.html" class="block" aria-label="Read ${post.title}">
+                        <a href="blog/${post.id}.html" class="block" aria-label="Read ${post.title}" onclick="if(typeof gtag === 'function') gtag('event', 'blog_post_clicked', { post_title: '${post.title.replace(/'/g, "\\'")}', post_category: '${post.category}' });">
                             <div class="relative overflow-hidden aspect-video">
                                 <img src="${post.thumbnail}" alt="${post.thumbnailAlt}" loading="lazy" decoding="async" width="1280" height="720"
                                      class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -422,6 +422,28 @@
         </div>
     </div>
 
+    <!-- Deferred Google Analytics -->
+    <script>
+        // Initialize gtag command queue immediately
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { window.dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-EDWNDSJW1P', { 'debug_mode': true });
+        console.log('📊 GA4 Initialized: G-EDWNDSJW1P (Debug Mode ON)');
+
+        function loadGoogleAnalytics() {
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-EDWNDSJW1P';
+            document.head.appendChild(script);
+        }
+
+        window.addEventListener('load', function () {
+            window.setTimeout(loadGoogleAnalytics, 1800);
+        });
+    </script>
+
     <!-- Firebase Auth Module -->
     <script type="module" src="assets/auth.js"></script>
     <script>
@@ -437,6 +459,34 @@
         });
     </script>
 
+    <!-- Custom GA4 Event Tracking -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const trackEvent = (eventName, params) => {
+                if (typeof window.gtag === 'function') {
+                    window.gtag('event', eventName, params);
+                    console.log(`📊 GA4 Event: ${eventName}`, params);
+                }
+            };
+
+            // 1. Social Links (Facebook / TikTok)
+            document.querySelectorAll('a[href*="facebook.com"], a[href*="tiktok.com"]').forEach(link => {
+                link.addEventListener('click', () => {
+                    const platform = link.href.includes('facebook') ? 'Facebook' : 'TikTok';
+                    trackEvent('social_click', { platform: platform });
+                });
+            });
+
+            // 2. Book Appointment Clicks (Navbar / Footer)
+            document.querySelectorAll('a[href*="#contact"]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    trackEvent('book_appointment_click', {
+                        location: btn.closest('header') ? 'navbar' : 'footer'
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -857,16 +857,18 @@
 
     <!-- Deferred Google Analytics -->
     <script>
+        // Initialize gtag command queue immediately
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { window.dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-EDWNDSJW1P', { 'debug_mode': true });
+        console.log('📊 GA4 Initialized: G-EDWNDSJW1P (Debug Mode ON)');
+
         function loadGoogleAnalytics() {
             const script = document.createElement('script');
             script.async = true;
             script.src = 'https://www.googletagmanager.com/gtag/js?id=G-EDWNDSJW1P';
-            script.onload = function () {
-                window.dataLayer = window.dataLayer || [];
-                window.gtag = function () { window.dataLayer.push(arguments); };
-                window.gtag('js', new Date());
-                window.gtag('config', 'G-EDWNDSJW1P');
-            };
             document.head.appendChild(script);
         }
 
@@ -986,7 +988,6 @@
             </div>
         </div>
     </div>
-
     <!-- Firebase Auth Module -->
     <script type="module" src="assets/auth.js"></script>
     <script>
@@ -1003,6 +1004,52 @@
         });
     </script>
 
+    <!-- Custom GA4 Event Tracking -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Helper to safely send events to GA4
+            const trackEvent = (eventName, params) => {
+                if (typeof window.gtag === 'function') {
+                    window.gtag('event', eventName, params);
+                    console.log(`📊 GA4 Event: ${eventName}`, params);
+                }
+            };
+
+            // 1. Book Appointment Clicks
+            document.querySelectorAll('a[href="#contact"]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    trackEvent('book_appointment_click', {
+                        location: btn.closest('section')?.id || btn.closest('header') ? 'navbar' : 'unknown'
+                    });
+                });
+            });
+
+            // 2. Social Links (Facebook / TikTok)
+            document.querySelectorAll('a[href*="facebook.com"], a[href*="tiktok.com"]').forEach(link => {
+                link.addEventListener('click', () => {
+                    const platform = link.href.includes('facebook') ? 'Facebook' : 'TikTok';
+                    trackEvent('social_click', { platform: platform });
+                });
+            });
+
+            // 3. Gallery Image Clicks
+            document.querySelectorAll('#gallery figure').forEach((fig, index) => {
+                fig.addEventListener('click', () => {
+                    // Get image alt text if available, otherwise use index
+                    const img = fig.querySelector('img');
+                    const imgName = img ? (img.alt || img.src.split('/').pop()) : `Image ${index + 1}`;
+                    trackEvent('gallery_image_viewed', { image_name: imgName, index: index + 1 });
+                });
+            });
+
+            // 4. Video Plays (Features)
+            document.querySelectorAll('video').forEach(video => {
+                video.addEventListener('play', () => {
+                    trackEvent('video_play', { video_src: video.querySelector('source')?.dataset?.src || 'unknown' });
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

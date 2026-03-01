@@ -18,6 +18,9 @@
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="dist/output.css">
 
+    <!-- Auth Modal Styles -->
+    <link rel="stylesheet" href="assets/auth-modal.css">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,11 +66,36 @@
                 <a href="/#contact"
                     class="text-white hover:text-pink-500 transition-colors uppercase text-sm tracking-wider">Contact</a>
             </div>
-            <a href="blog.html"
-                class="bg-pink-600 text-white font-semibold px-6 py-2 rounded-full hover:bg-pink-700 hover:shadow-lg hover:shadow-pink-600/30 transition-all transform hover:-translate-y-0.5"
-                title="Check our Blog">
-                Check our Blog
-            </a>
+            <!-- Nav right: Blog + Auth -->
+            <div id="nav-auth-area">
+                <a href="blog.html"
+                    class="bg-pink-600 text-white font-semibold px-6 py-2 rounded-full hover:bg-pink-700 hover:shadow-lg hover:shadow-pink-600/30 transition-all transform hover:-translate-y-0.5"
+                    title="Check our Blog">
+                    Check our Blog
+                </a>
+
+                <!-- Sign In button (shown when logged out) -->
+                <button id="nav-signin-btn" class="btn-signin-nav" aria-label="Sign in to your account">
+                    <i class="ri-user-line"></i> Sign In
+                </button>
+
+                <!-- User menu (shown when logged in) -->
+                <div id="nav-user-menu" class="auth-user-menu" style="display:none;">
+                    <button id="auth-avatar-btn" class="auth-avatar-btn" aria-haspopup="true" aria-label="Account menu">
+                        <img id="nav-user-avatar" class="auth-avatar" src="" alt="Profile picture"
+                            style="display:none;">
+                        <div id="nav-user-initials" class="auth-avatar-initials" style="display:none;"></div>
+                        <span id="nav-user-name" class="auth-avatar-name"></span>
+                        <i class="ri-arrow-down-s-line text-gray-400 text-sm"></i>
+                    </button>
+                    <div id="auth-dropdown" class="auth-dropdown" role="menu">
+                        <div id="nav-user-email" class="auth-dropdown-email"></div>
+                        <button id="nav-signout-btn" class="auth-dropdown-item danger" role="menuitem">
+                            <i class="ri-logout-box-r-line"></i> Sign Out
+                        </button>
+                    </div>
+                </div>
+            </div>
         </nav>
     </header>
 
@@ -292,6 +320,123 @@
 
         loadBlogPosts();
     </script>
+    <!-- ══════════════════════════════════════════════════
+         Sign-In / Sign-Up Modal
+    ══════════════════════════════════════════════════ -->
+    <div id="auth-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="auth-modal-title">
+        <div class="auth-modal-card">
+            <button id="auth-modal-close" class="auth-modal-close" aria-label="Close sign-in modal">
+                <i class="ri-close-line"></i>
+            </button>
+
+            <div class="auth-modal-logo" id="auth-modal-title">
+                <span>Charlie's</span> Barber
+            </div>
+            <p class="auth-modal-subtitle">Sign in to your account</p>
+
+            <!-- Tabs -->
+            <div class="auth-tabs" role="tablist">
+                <button id="auth-tab-signin" class="auth-tab active" role="tab" aria-selected="true">Sign In</button>
+                <button id="auth-tab-signup" class="auth-tab" role="tab" aria-selected="false">Create Account</button>
+            </div>
+
+            <!-- ── Sign In Panel ── -->
+            <div id="auth-panel-signin" class="auth-panel active" role="tabpanel">
+                <button id="auth-signin-google" class="btn-google">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                            fill="#4285F4" />
+                        <path
+                            d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                            fill="#34A853" />
+                        <path
+                            d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                            fill="#FBBC05" />
+                        <path
+                            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                            fill="#EA4335" />
+                    </svg>
+                    Continue with Google
+                </button>
+                <div class="auth-divider">or</div>
+                <div id="auth-signin-message" class="auth-message"></div>
+                <div class="auth-field">
+                    <label for="auth-signin-email">Email</label>
+                    <input type="email" id="auth-signin-email" placeholder="your@email.com" autocomplete="email">
+                </div>
+                <div class="auth-field">
+                    <label for="auth-signin-password">Password</label>
+                    <input type="password" id="auth-signin-password" placeholder="Your password"
+                        autocomplete="current-password">
+                </div>
+                <button id="auth-signin-submit" class="btn-primary">
+                    <i class="ri-login-box-line"></i> Sign In
+                </button>
+                <p class="auth-footer-note">
+                    No account? <a href="#" id="switch-to-signup">Create one free</a>
+                </p>
+            </div>
+
+            <!-- ── Create Account Panel ── -->
+            <div id="auth-panel-signup" class="auth-panel" role="tabpanel">
+                <button id="auth-signup-google" class="btn-google">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                            fill="#4285F4" />
+                        <path
+                            d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                            fill="#34A853" />
+                        <path
+                            d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                            fill="#FBBC05" />
+                        <path
+                            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                            fill="#EA4335" />
+                    </svg>
+                    Continue with Google
+                </button>
+                <div class="auth-divider">or</div>
+                <div id="auth-signup-message" class="auth-message"></div>
+                <div class="auth-field">
+                    <label for="auth-signup-name">Full Name</label>
+                    <input type="text" id="auth-signup-name" placeholder="Your name" autocomplete="name">
+                </div>
+                <div class="auth-field">
+                    <label for="auth-signup-email">Email</label>
+                    <input type="email" id="auth-signup-email" placeholder="your@email.com" autocomplete="email">
+                </div>
+                <div class="auth-field">
+                    <label for="auth-signup-password">Password</label>
+                    <input type="password" id="auth-signup-password" placeholder="Min. 6 characters"
+                        autocomplete="new-password">
+                </div>
+                <button id="auth-signup-submit" class="btn-primary">
+                    <i class="ri-user-add-line"></i> Create Account
+                </button>
+                <p class="auth-footer-note">
+                    Already have an account? <a href="#" id="switch-to-signin">Sign in</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase Auth Module -->
+    <script type="module" src="assets/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('switch-to-signup')?.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.getElementById('auth-tab-signup')?.click();
+            });
+            document.getElementById('switch-to-signin')?.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.getElementById('auth-tab-signin')?.click();
+            });
+        });
+    </script>
+
 </body>
 
 </html>

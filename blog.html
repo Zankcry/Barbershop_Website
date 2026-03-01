@@ -429,8 +429,7 @@
         function gtag() { window.dataLayer.push(arguments); }
         window.gtag = gtag;
         gtag('js', new Date());
-        gtag('config', 'G-EDWNDSJW1P', { 'debug_mode': true });
-        console.log('📊 GA4 Initialized: G-EDWNDSJW1P (Debug Mode ON)');
+        gtag('config', 'G-EDWNDSJW1P');
 
         function loadGoogleAnalytics() {
             const script = document.createElement('script');
@@ -465,7 +464,6 @@
             const trackEvent = (eventName, params) => {
                 if (typeof window.gtag === 'function') {
                     window.gtag('event', eventName, params);
-                    console.log(`📊 GA4 Event: ${eventName}`, params);
                 }
             };
 

@@ -44,13 +44,11 @@ function gaSetUser(uid) {
     if (typeof window.gtag !== 'function') return;
     window.gtag('set', { user_id: uid });
     window.gtag('config', GA_MEASUREMENT_ID, { user_id: uid });
-    console.log(`📊 GA4 User ID Set: ${uid}`);
 }
 
 function gaEvent(eventName, params = {}) {
     if (typeof window.gtag !== 'function') return;
     window.gtag('event', eventName, params);
-    console.log(`📊 GA4 Event (Auth): ${eventName}`, params);
 }
 
 // ─── UI Elements ─────────────────────────────────────────────────────────────

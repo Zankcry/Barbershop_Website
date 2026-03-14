@@ -12,10 +12,14 @@
         toggle.className = 'mobile-nav-toggle';
         toggle.setAttribute('aria-label', 'Open navigation menu');
 
+        const toggleIcon = document.createElement('i');
+        toggleIcon.className = 'ri-menu-line';
+        toggleIcon.setAttribute('aria-hidden', 'true');
+
         const panelId = `mobile-nav-panel-${index}`;
         toggle.setAttribute('aria-controls', panelId);
         toggle.setAttribute('aria-expanded', 'false');
-        toggle.innerHTML = '<i class="ri-menu-line" aria-hidden="true"></i>';
+        toggle.appendChild(toggleIcon);
 
         const panel = document.createElement('div');
         panel.id = panelId;
@@ -92,7 +96,7 @@
             panel.setAttribute('aria-hidden', 'true');
             toggle.setAttribute('aria-expanded', 'false');
             toggle.setAttribute('aria-label', 'Open navigation menu');
-            toggle.innerHTML = '<i class="ri-menu-line" aria-hidden="true"></i>';
+            toggleIcon.className = 'ri-menu-line';
             document.body.classList.remove('mobile-nav-open');
         };
 
@@ -101,7 +105,7 @@
             panel.setAttribute('aria-hidden', 'false');
             toggle.setAttribute('aria-expanded', 'true');
             toggle.setAttribute('aria-label', 'Close navigation menu');
-            toggle.innerHTML = '<i class="ri-close-line" aria-hidden="true"></i>';
+            toggleIcon.className = 'ri-close-line';
             document.body.classList.add('mobile-nav-open');
         };
 
@@ -122,13 +126,14 @@
 
         document.addEventListener('click', (event) => {
             const target = event.target;
+            const eventPath = typeof event.composedPath === 'function' ? event.composedPath() : [];
             if (!(target instanceof Node)) {
                 return;
             }
             if (!panel.classList.contains('open')) {
                 return;
             }
-            if (panel.contains(target) || toggle.contains(target)) {
+            if (eventPath.includes(panel) || eventPath.includes(toggle) || panel.contains(target) || toggle.contains(target)) {
                 return;
             }
             closePanel();
